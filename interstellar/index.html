@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星际穿越 · 卡片版 · iostiny / zen</title>
+<meta name="description" content="Christopher Nolan《星际穿越》中文卡片版：仰望、相对、爱即维度三章共 15 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#look-up"><span class="num">01</span>仰望</a>
+  <a href="#relative"><span class="num">02</span>相对</a>
+  <a href="#love-dimension"><span class="num">03</span>爱即维度</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>星际穿越</h1>
+    <div class="latin">Interstellar &middot; A reading of Christopher Nolan's film &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 08 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  这是一部披着<em>科学外衣</em>的诗。<br>
+  Nolan 借虫洞、黑洞、五维超立方体，问的其实是<strong>最古老的问题</strong>——
+  人之于宇宙、父之于女、爱之于时间。
+  这一册把《Interstellar》拆成十五张卡片——
+  它们不解释科学，它们<em>抄下这部电影的心跳</em>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 仰望 · LOOK UP -->
+<!-- ============================================================ -->
+<section class="section" id="look-up">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">仰望</span>
+    <span class="section-latin">— Look up</span>
+    <span class="section-desc">人之为人是追问</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- I01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">LOOK&nbsp;UP</span>
+      </div>
+      <h3 class="card-quote">仰望和低头之间，<strong>差一种人</strong>。</h3>
+      <div class="card-body">
+        <p>库珀坐在玉米地的卡车上，对儿子说出那句"We used to look up at the sky"——电影的<em>第一声叹息</em>。</p>
+        <p>低头的人解决吃饭，仰望的人发明火箭。<strong>两类人活在同一个地球上</strong>，但活在不同的世界。</p>
+        <p>当一个文明集体停止仰望，它就不是衰老，是<em>主动选择了变小</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"We used to look up at the sky and wonder at our place in the stars. Now we just look down and worry about our place in the dirt."（我们曾仰望星空，思索自己在群星之间的位置；如今我们只低头，操心自己在尘土里的位置。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">BLIGHT</span>
+      </div>
+      <h3 class="card-quote">农业文明的尽头是<em>枯萎病</em>。</h3>
+      <div class="card-body">
+        <p>玉米是最后一种作物，下一种就<strong>没有了</strong>——blight 一年一年逼近，人只剩"再守一季"的盲目。</p>
+        <p>电影没有把灾难拍成爆炸，它拍成<em>沙尘从门缝渗进来</em>——慢、安静、不可逆。</p>
+        <p>讲的不是末日，是一个道理：<strong>人不能只解决脚下的问题，否则脚下也会塌</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"We're not meant to save the world. We're meant to leave it."（我们的使命不是拯救世界，是离开它。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">DISTANCE</span>
+      </div>
+      <h3 class="card-quote">他怀念的不是飞行，是<strong>"远方"还在</strong>这件事。</h3>
+      <div class="card-body">
+        <p>库珀是飞行员转的农民——他不是想再飞，他想确认<em>还有地方可飞</em>。</p>
+        <p>当世界把每个人都按在玉米地里，<strong>"远方"消失了</strong>——它消失的不是地理，是想象力。</p>
+        <p>所以他遇到 NASA 的那一刻，眼里亮的不是任务，是"<em>原来还在</em>"。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Mankind was born on Earth. It was never meant to die here."（人类生于地球，但这里不该是终点。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">RAGE</span>
+      </div>
+      <h3 class="card-quote">"Do not go gentle into that good night."——这部电影的<em>底音</em>。</h3>
+      <div class="card-body">
+        <p>布兰德教授把 Dylan Thomas 的诗念了一遍又一遍——发射时、抵达时、临死时。</p>
+        <p>这首诗讲的是<strong>不温顺地走</strong>。人面对宇宙的尺度，最体面的姿态不是接受，是<em>燃烧</em>。</p>
+        <p>Nolan 把整部电影做成这首诗的<strong>声音化</strong>——Zimmer 的管风琴就是那句 "Rage, rage"。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Do not go gentle into that good night. / Rage, rage against the dying of the light."（不要温顺地走进那良夜。/ 怒斥，怒斥光明的消逝。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">LEAVE&nbsp;TO&nbsp;RETURN</span>
+      </div>
+      <h3 class="card-quote">选择离开是为了<strong>回来</strong>。</h3>
+      <div class="card-body">
+        <p>库珀对墨菲说"I'll come back"——这句话他兑现了，<em>用了一辈子的时间</em>。</p>
+        <p>所有的<strong>出发</strong>都是回家的另一种说法——离开是动作，回来才是<em>意图</em>。</p>
+        <p>太空里他没有一天忘记那块手表、那个房间、那个孩子——任务在飞船上，<strong>家在他心里</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"I'm coming back."（我会回来。）——这句台词在电影里出现了不止一次，每一次都更重。</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · 相对 · RELATIVE -->
+<!-- ============================================================ -->
+<section class="section" id="relative">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">相对</span>
+    <span class="section-latin">— Relative</span>
+    <span class="section-desc">时间不是背景，是变量</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- I06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">MILLER'S&nbsp;PLANET</span>
+      </div>
+      <h3 class="card-quote">米勒星球的 1 小时 = 地球的 7 年。</h3>
+      <div class="card-body">
+        <p>引力把时间<em>压扁</em>——海浪一样高的山从地平线推过来，背后是七年的代价。</p>
+        <p>这一段是电影最残忍的<strong>物理课</strong>：时间在引力面前<em>不公平</em>，它不平均分发给每个人。</p>
+        <p>所以"<strong>耽误</strong>"这个动作有了重量——耽误的不是几小时，是几个孩子的童年。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Time is relative — it can stretch and squeeze, but it can never run backwards."（时间是相对的——它能拉伸、能压缩，但永远不能倒流。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">23&nbsp;YEARS</span>
+      </div>
+      <h3 class="card-quote">回到飞船看 23 年的消息——<strong>科幻片里最重的一段戏</strong>。</h3>
+      <div class="card-body">
+        <p>没有爆炸、没有反派——只有一个父亲<em>一条一条</em>看孩子长大、结婚、丧偶、变老的视频。</p>
+        <p>McConaughey 在这一幕没有台词，只有<strong>哭</strong>——他哭的不是错过，是"<em>我不在的时候，他们继续活着</em>"。</p>
+        <p>整部电影所有的物理学，都为了让这一幕的眼泪<em>有重量</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>Tom: "I guess I just figured you weren't listening anymore. Goodbye, Dad."（儿子最后的留言："我猜你已经不在听了。再见，爸爸。"）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">GARGANTUA</span>
+      </div>
+      <h3 class="card-quote">人类总想看那个<em>禁忌</em>的地方。</h3>
+      <div class="card-body">
+        <p>卡冈图雅——电影里那个巨大的、缓慢旋转的黑洞——是人类对<strong>不可知</strong>的视觉化。</p>
+        <p>它好看到不真实，但它是 Kip Thorne 拿方程解出来的——<em>科学和神性在这里重合</em>。</p>
+        <p>库珀决定<strong>跳进去</strong>——不是为了任务，是因为人这种生物<em>就是想看</em>那个最深的地方。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Maybe we've spent too long trying to figure all this out with theory."（我们或许在理论上耗得太久了——有时该跳进去。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">HONESTY&nbsp;90%</span>
+      </div>
+      <h3 class="card-quote">TARS 把诚实调到 90%——<strong>完全诚实是不可生存的</strong>。</h3>
+      <div class="card-body">
+        <p>这是 Nolan 安插的最冷的笑话——机器都知道全说真话会出事，何况人。</p>
+        <p>"诚实"在电影里被处理成<em>一个可调参数</em>——它不是道德高地，是<strong>社交润滑剂</strong>。</p>
+        <p>TARS 比所有人类角色都更<em>松弛</em>，因为它早就接受了这件事：真相要分寸，不分寸要命。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>Cooper: "What's your honesty parameter?" TARS: "90 percent." Cooper: "90?" TARS: "Absolute honesty isn't always the most diplomatic, nor the safest form of communication with emotional beings."（绝对诚实，对情感生物来说既不得体，也不安全。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">TESSERACT</span>
+      </div>
+      <h3 class="card-quote">五维空间里，时间是<em>地形</em>，不是流。</h3>
+      <div class="card-body">
+        <p>库珀从超立方体里"<strong>翻看</strong>"墨菲的童年——每一格都是一个时刻，他可以走过去、推开、敲打。</p>
+        <p>Nolan 把抽象的<em>高维</em>拍成了一座<strong>由记忆构成的图书馆</strong>——时间在这里被空间化、可触。</p>
+        <p>这一幕的浪漫在于：原来<em>过去并没有消失</em>，只是我们站在三维里看不见它的形状。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"To them, time may be just another physical dimension. To us, it isn't."（对他们而言，时间不过是另一个空间维度；对我们而言，不是。）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · 爱即维度 · LOVE IS THE DIMENSION -->
+<!-- ============================================================ -->
+<section class="section" id="love-dimension">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">爱即维度</span>
+    <span class="section-latin">— Love is the dimension</span>
+    <span class="section-desc">父女、超越时空</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- I11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">LOVE&nbsp;TRANSCENDS</span>
+      </div>
+      <h3 class="card-quote">爱是<strong>唯一</strong>能被我们感知的、跨越时空的东西。</h3>
+      <div class="card-body">
+        <p>布兰德博士在飞船里说出这句话——队员们当成<em>软弱</em>，观众当成<strong>电影的核心赌注</strong>。</p>
+        <p>Nolan 把它放在最理性的人嘴里说出来——这是一种<em>赤裸的勇敢</em>：科学家承认有一种东西科学暂时解释不了。</p>
+        <p>整部电影到最后证明她是<strong>对的</strong>——爱不是隐喻，是<em>可作用的力</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Love is the one thing we are capable of perceiving that transcends dimensions of time and space."（爱是我们唯一能感知的、跨越时空的存在。）</p>
+          <p>"Maybe it means something more — something we can't yet understand."（也许它意味着某种更深的东西——我们还无法理解的。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">FATHER&nbsp;DAUGHTER</span>
+      </div>
+      <h3 class="card-quote">父女关系是这部电影的<em>宇宙信道</em>。</h3>
+      <div class="card-body">
+        <p>所有的物理学、所有的英雄主义，最终走向<strong>一对父女</strong>——一个在飞船里、一个在书房里。</p>
+        <p>人类不是被理论救的，是被<em>"我答应过她"</em>这件事救的——理论是骨架，<strong>承诺是血</strong>。</p>
+        <p>Nolan 在最宏大的科幻里押了最朴素的赌注：<em>亲情比黑洞更接近真相</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Once you're a parent, you're the ghost of your children's future."（成为父母之后，你就是你孩子未来的幽灵。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">GRAVITY&nbsp;CODE</span>
+      </div>
+      <h3 class="card-quote">书架后面的库珀——用引力敲出摩斯密码：<strong>爱是可观测的力</strong>。</h3>
+      <div class="card-body">
+        <p>"幽灵"是父亲——这个反转是 Nolan 整部电影的<em>诗学顶点</em>。</p>
+        <p>跨越几十光年和几十年，父亲找到的唯一<strong>通道</strong>是手表的秒针、书架的尘埃、墙上的灰线。</p>
+        <p>它把"爱"从抽象变成<em>可解码的信号</em>——爱不是感觉，<strong>爱是动作</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"It was me. I was the ghost. I was here all along."（是我。我就是那个幽灵。我一直都在。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">OLD&nbsp;DAUGHTER</span>
+      </div>
+      <h3 class="card-quote">老去的墨菲见到不老的父亲——<em>这一帧抵过半部哲学书</em>。</h3>
+      <div class="card-body">
+        <p>她躺在病床上、白发、儿孙满堂；他还是那张脸——<strong>时间在两个人身上走得不一样</strong>。</p>
+        <p>她说"父亲不该看着孩子死"——所以让他走。这是<em>她最后一次照顾他</em>。</p>
+        <p>整部电影的物理学，最后凝缩成<strong>一次握手</strong>——比任何方程都更准确地说出"时间是什么"。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>Murph: "No parent should have to watch their own child die. I have my kids here for me now. You go."（没有父母应该看着自己的孩子死。我有孩子陪我。你走吧。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- I15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">SAIL&nbsp;ON</span>
+      </div>
+      <h3 class="card-quote">电影最后一个动作：库珀<strong>又出发了</strong>。</h3>
+      <div class="card-body">
+        <p>他没有躺下来享受英雄待遇——他偷了一艘小船，去找布兰德。</p>
+        <p>Nolan 把救赎拍成<em>继续航行</em>——<strong>救赎不是落地，是不停</strong>。</p>
+        <p>仰望的人最终都要回到星空——因为<em>家在身后，远方也在身后，但前面还有一颗星</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Maybe right now she's settling in for the night. In a brand new solar system."（也许此刻她正在一个新的星系里，准备过夜。）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "Do not go gentle into that good night.<br>
+    Rage, rage against the dying of the light."<br>
+    <br>
+    （不要温顺地走进那良夜，<br>
+    怒斥，怒斥光明的消逝。）
+  </p>
+  <div class="author">— Dylan Thomas <small>via Christopher Nolan &middot; Interstellar</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>

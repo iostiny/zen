@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教父三部曲 · 卡片版 · iostiny / zen</title>
+<meta name="description" content="Francis Ford Coppola 教父三部曲（1972/1974/1990）中文卡片版：维多与传承、崛起与孤立、救赎与命运三章共 15 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#godfather-i"><span class="num">01</span>维多与传承</a>
+  <a href="#godfather-ii"><span class="num">02</span>崛起与孤立</a>
+  <a href="#godfather-iii"><span class="num">03</span>救赎与命运</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>教父三部曲</h1>
+    <div class="latin">The Godfather Trilogy &middot; 1972 &middot; 1974 &middot; 1990 &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 07 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  Coppola 用三部电影、十九年时间，讲了一个人<strong>怎么把自己变成他最不想变成的人</strong>。
+  这不是黑帮片——这是一部关于<em>家族</em>、<em>过界</em>、<em>命运回旋</em>的史诗。
+  这一册把三部曲的判断拆成十五张卡片——
+  它们不教你如何掌权，它们提醒你<strong>权力的代价</strong>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · The Godfather (1972) · 维多与传承 -->
+<!-- ============================================================ -->
+<section class="section" id="godfather-i">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">维多与传承</span>
+    <span class="section-latin">— The Godfather, 1972</span>
+    <span class="section-desc">家族秩序与第一道伤</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- G01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">OFFER&nbsp;OR&nbsp;ELSE</span>
+      </div>
+      <h3 class="card-quote">"我会给他一个无法拒绝的提议。"——不是威胁，是把<strong>规则</strong>压成<strong>选择</strong>。</h3>
+      <div class="card-body">
+        <p>表面是体面话——"提议"。底子是<em>没有第二条路</em>——要么签字，要么脑袋。</p>
+        <p>维多的天才在这里：他不剥夺你的<strong>选择权</strong>，他只剥夺你<em>选择"不"</em>的可能。</p>
+        <p>这是教父式的语言艺术——<strong>用最温和的句子，做最不温和的事</strong>。整个家族的运行逻辑，都压在这一句里。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"I'm gonna make him an offer he can't refuse."（我会给他一个无法拒绝的提议。）</p>
+          <p>"It's not personal, Sonny. It's strictly business."（这不是私人恩怨，桑尼，纯粹是生意。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">FAMILY&nbsp;VS&nbsp;STATE</span>
+      </div>
+      <h3 class="card-quote">维多用<em>家族秩序</em>反抗<em>国家秩序</em>——他赢了，但代价是家族变成国家的形状。</h3>
+      <div class="card-body">
+        <p>他不信法庭、不信警察、不信议员——西西里教他的是：<strong>国家不保护你，只有家族保护你</strong>。</p>
+        <p>所以他建立了一个<em>影子国家</em>——有法庭（他的书房）、有税（保护费）、有军队（打手）。</p>
+        <p>但讽刺在这里：当家族变得足够大、足够有秩序，它就<strong>变成了它最初要反抗的那个东西</strong>。维多没看见这一步，Michael 才看见。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"A man who doesn't spend time with his family can never be a real man."（不与家人共处的男人不是真正的男人。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">FAMILY&nbsp;FIRST</span>
+      </div>
+      <h3 class="card-quote">友谊、忠诚、敬畏——维多治家三柱。任何一个缺位，整栋楼塌。</h3>
+      <div class="card-body">
+        <p>友谊：他记得每一个帮过他的人，也<em>不忘</em>每一个背过他的人——人情是他的货币。</p>
+        <p>忠诚：他要的不是能力最强的人，是<strong>不会反水的人</strong>——能力可以训练，忠诚不行。</p>
+        <p>敬畏：他从不发怒，但站他面前的人都心里发凉——<em>真正的权威不在大声里，在沉默里</em>。</p>
+        <p>三柱缺一，家族就垮——Sonny 缺了敬畏（鲁莽），Fredo 缺了能力又缺了忠诚，最后只有 Michael 三样都有。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Friendship is everything. Friendship is more than talent. It is more than the government. It is almost the equal of family."（友谊就是一切。友谊高于天赋，高于政府，几乎等同于家庭。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">THE&nbsp;LINE&nbsp;CROSSED</span>
+      </div>
+      <h3 class="card-quote">Michael 在饭店开枪——那一秒他越过的不是法律，是<strong>自己</strong>。</h3>
+      <div class="card-body">
+        <p>之前他是<em>大学生、海军英雄、Kay 的未婚夫</em>——一个被刻意排除在家族外的儿子。</p>
+        <p>扣下扳机的那一刻，他<strong>把自己之前的所有身份都杀了</strong>。从此他只剩一个身份：Corleone。</p>
+        <p>Coppola 的镜头很冷静——没有英雄音乐，没有特写。<em>过界从来不是大事件，是一个安静的动作</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"My father is no different than any powerful man... any man who's responsible for other people, like a senator or president."（我父亲和任何有权势的人没有区别，和参议员、总统一样，都对他人负有责任。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">OLD&nbsp;WORLD&nbsp;NEW</span>
+      </div>
+      <h3 class="card-quote">西西里 vs 美国梦：旧大陆的血与新大陆的钱，<em>在 Michael 身上</em>对接成第一道伤。</h3>
+      <div class="card-body">
+        <p>父亲带着<strong>西西里的血</strong>来美国——血里有荣誉、有复仇、有血亲。</p>
+        <p>Michael 出生在<strong>美国梦里</strong>——梦里有大学、有制度、有"自己的人生"。</p>
+        <p>但当 Apollonia 在西西里被炸死、当父亲在街市被刺，两个世界<em>对接的地方就开始流血</em>——他不能回美国梦了，他必须变成西西里的儿子。</p>
+        <p>三部曲的所有悲剧，都从这道伤口长出来。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"That's my family, Kay. That's not me."（那是我的家族，凯。那不是我。）——这句话他自己骗自己骗了三十年。</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · The Godfather Part II (1974) · 崛起与孤立 -->
+<!-- ============================================================ -->
+<section class="section" id="godfather-ii">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">崛起与孤立</span>
+    <span class="section-latin">— The Godfather Part II, 1974</span>
+    <span class="section-desc">同一个家族的潮汐</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- G06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">TIDES</span>
+      </div>
+      <h3 class="card-quote">双线叙事：少年维多在升起，中年 Michael 在沉没——同一个家族的<em>潮汐</em>。</h3>
+      <div class="card-body">
+        <p>De Niro 演的年轻维多——逃离西西里、纽约打拼、为母报仇——每一步都是<strong>从无到有</strong>。</p>
+        <p>Pacino 演的中年 Michael——古巴谈判、参议院听证、湖边别墅——每一步都是<strong>从有到无</strong>。</p>
+        <p>Coppola 把两条线剪在一起的意思很狠：<em>家族就像潮水，涨和退用的是同一片海</em>。父亲建什么，儿子就拆什么。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Your country ain't your blood. Remember that."（你的国家不是你的血。记住这一点。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">ENEMIES&nbsp;CLOSER</span>
+      </div>
+      <h3 class="card-quote">"敌人要离你更近。" Michael 把这条做到极致——最后<strong>没有朋友</strong>。</h3>
+      <div class="card-body">
+        <p>这句话本是父亲的智慧——盯紧敌人比盯紧朋友更要紧。</p>
+        <p>但 Michael 把它推到了<em>偏执</em>的极致：连兄弟也按敌人盯，连妻子也按敌人盯，连孩子也<em>不让靠近</em>。</p>
+        <p>结果是——<strong>身边全是"被监视的人"，没有一个"靠近的人"</strong>。父亲留下的智慧，被儿子用过头就变成了毒药。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Keep your friends close, but your enemies closer."（让朋友靠近你，敌人更要靠近。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">FREDO</span>
+      </div>
+      <h3 class="card-quote">Fredo 之死：杀亲兄长才是真正的<em>过界</em>。从那一刻起，Michael 不再是任何人的家人。</h3>
+      <div class="card-body">
+        <p>Fredo 软弱、嫉妒、办了蠢事——但他是<strong>哥哥</strong>。维多治家的第一条规矩：<em>家里人不能动</em>。</p>
+        <p>Michael 等到母亲死后才动手——他知道母亲在世这件事就成不了。他<em>没忍住</em>，他选了"赢"，没选"家"。</p>
+        <p>湖上那一枪响完，Corleone 这个姓<strong>就只剩字面了</strong>——里面再也没有"家族"两个字。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"I know it was you, Fredo. You broke my heart. You broke my heart!"（我知道是你，弗雷多。你伤透了我的心。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">KAY&nbsp;LEAVES</span>
+      </div>
+      <h3 class="card-quote">凯的离开：道义在私域的最后审判——女人看穿了，男人才输得彻底。</h3>
+      <div class="card-body">
+        <p>Kay 不是哭着走的，是<em>清醒地走</em>——她告诉他流产的不是流产，是<strong>堕胎</strong>，是她不愿再把孩子带进这个家族。</p>
+        <p>那是 Michael 听过最重的一句话——比任何枪、任何政府都重。因为它来自<em>最了解他的人</em>。</p>
+        <p>从那一刻起他知道：<strong>这个家不可能继续是家</strong>。他赢了所有外面的仗，输在了门里。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"It wasn't a miscarriage, Michael. It was an abortion. An abortion!"（不是流产，迈克尔，是堕胎。是堕胎！）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">EMPTY&nbsp;THRONE</span>
+      </div>
+      <h3 class="card-quote">他得到了所有他想要的，<strong>失去了所有让得到值得的人</strong>。</h3>
+      <div class="card-body">
+        <p>第二部的最后一幕——Michael 一个人坐在湖边花园里，秋叶飘下，<em>没有人在他身边</em>。</p>
+        <p>父亲、母亲、兄长、妻子、孩子——名单上的人在他还活着的时候，<strong>一个一个从他的生活里消失</strong>。</p>
+        <p>权力的孤立不是一个事件，是<em>一个缓慢的减法</em>。他每赢一次，就有一个人离开桌子。最后桌上只剩他。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Don't ask me about my business, Kay."（别问我生意上的事，凯。）——他用这句话把每一个想靠近的人推远。</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · The Godfather Part III (1990) · 救赎与命运 -->
+<!-- ============================================================ -->
+<section class="section" id="godfather-iii">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">救赎与命运</span>
+    <span class="section-latin">— The Godfather Part III, 1990</span>
+    <span class="section-desc">回旋之门已关上</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- G11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">PULLED&nbsp;BACK&nbsp;IN</span>
+      </div>
+      <h3 class="card-quote">"我以为我已经出来了，他们又把我拽回去。"——这句被引到滥，但它说的是<em>因果不放过任何人</em>。</h3>
+      <div class="card-body">
+        <p>Michael 老了——白发、糖尿病、想做合法生意、想给孩子洗白姓氏、想买一个梵蒂冈的体面身份。</p>
+        <p>但他<strong>不能</strong>——因为前半生借的债，<em>到了要还的时候</em>。出来不是你想出来就出来。</p>
+        <p>这句台词的真正分量不是"被拖回"——是<strong>"原以为可以出来"</strong>这个幻觉本身。觉者从不抱这个幻觉，所以也不会有这句话。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Just when I thought I was out, they pull me back in!"（每当我以为已经抽身，他们又把我拽了回去！）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">DOOR&nbsp;CLOSED</span>
+      </div>
+      <h3 class="card-quote">Michael 想救赎——但救赎之门从来在<strong>过界之前</strong>，过了就关上了。</h3>
+      <div class="card-body">
+        <p>他向红衣主教告解、他给教会捐巨款、他试图把财产<em>洗成慈善</em>——他真心想干净。</p>
+        <p>但救赎的逻辑不是<em>悔得够深就能洗</em>——是<strong>有些动作做了就回不去</strong>。Fredo 那一枪，封死了所有后门。</p>
+        <p>电影最痛的不是他没救赎成——是<em>他真的想救赎</em>，但<strong>已经晚了</strong>。这比"不想救赎"残酷十倍。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Your sins are terrible, and it is just that you suffer. Your life could be redeemed, but I know you do not believe that. You will not change."（你的罪深重，受苦是应得的。你的生命本可救赎，但我知道你不信，你不会改变。）——红衣主教对 Michael 说。</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">MARY&nbsp;FALLS</span>
+      </div>
+      <h3 class="card-quote">Mary 之死：他用一生维护家族，最终毁了家族最纯的那个人。<em>命运的回旋</em>。</h3>
+      <div class="card-body">
+        <p>歌剧院外的子弹本是冲他来的——结果穿过他的女儿。这是<strong>整个三部曲最锋利的一刀</strong>。</p>
+        <p>Mary 是 Michael 内心还没死透的那一小块——天真、爱、还相信家。子弹一响，<em>那一小块也死了</em>。</p>
+        <p>Pacino 那一声<strong>无声的嘶吼</strong>——没有声音，只有张开的嘴——是电影史上最重的一秒。</p>
+        <p>命运的回旋在这里完成：<em>你为之而活的，最终因你而死</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"Dad?... Dad?..."（爸……爸……）——Mary 倒地前的最后两个字。</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">UNDER&nbsp;VESTMENTS</span>
+      </div>
+      <h3 class="card-quote">梵蒂冈丑闻 / 教皇被弑——把"罪"放到最大的衣冠下，Michael 还是没洗干净自己。</h3>
+      <div class="card-body">
+        <p>第三部把舞台抬到了<strong>梵蒂冈</strong>——红衣主教、教皇遗嘱、银行欺诈——罪穿上了金色的法衣。</p>
+        <p>Coppola 在说：<em>权力的本质在哪儿都一样</em>。教会、政府、家族、黑帮——衣冠不同，规则一样。</p>
+        <p>Michael 以为<strong>挤进最大的衣冠下面</strong>就能干净——但他错了：<em>越大的衣冠下面，越脏</em>。他只是从一个圈进了另一个圈。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"The higher I go, the crookeder it becomes."（我爬得越高，看到的越脏。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- G15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">ALONE&nbsp;IN&nbsp;CHAIR</span>
+      </div>
+      <h3 class="card-quote">老年 Michael 独自死在椅子上——三部曲最沉的一帧。<strong>没人来，没事发生</strong>，他只是停了。</h3>
+      <div class="card-body">
+        <p>西西里庄园、阳光、一只狗、一颗橘子从手里滚下——然后人歪倒。<em>没有音乐高潮，没有遗言</em>。</p>
+        <p>这是 Coppola 对一个皇帝的最终判决：<strong>死时无人</strong>。不是被仇敌杀的，不是被儿子背叛的——是<em>所有人都已经不在了</em>。</p>
+        <p>这一帧比任何枪战都重——它告诉你：<em>权力的终点不是悲壮，是空</em>。</p>
+        <p>三部曲到此结束。镜头退远，西西里的太阳照在一个再也没人会来看的老人身上。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"All the power on earth can't change destiny."（世上所有的权力，都改变不了命运。）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "Just when I thought<br>
+    I was out,<br>
+    they pull me back in."<br>
+    <em>（每当我以为已经抽身，他们又把我拽了回去。）</em>
+  </p>
+  <div class="author">— Michael Corleone <small>via Francis Ford Coppola &middot; The Godfather Trilogy</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>

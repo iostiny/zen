@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洛基 · 卡片版 · iostiny / zen</title>
+<meta name="description" content="Marvel 剧集《洛基》中文卡片版：荣耀的负担、时间与变体、王座之孤三章共 15 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#glorious-purpose"><span class="num">01</span>荣耀的负担</a>
+  <a href="#time-variance"><span class="num">02</span>时间与变体</a>
+  <a href="#throne"><span class="num">03</span>王座之孤</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>洛基</h1>
+    <div class="latin">Loki &middot; A reading of the Marvel series &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 05 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  从阿斯加德的<em>恶作剧之神</em>，到时间织机前的<strong>独坐之神</strong>——
+  洛基走了一条最长的弧线：从<em>我要被加冕</em>，到<strong>我要被忘记</strong>。
+  这一册把这部剧里关于<strong>身份</strong>、<strong>自由意志</strong>、<strong>孤独</strong>的判断，
+  拆成十五张卡片——它不讨论英雄，它讨论<em>一个人如何成为自己</em>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 荣耀的负担 · GLORIOUS PURPOSE -->
+<!-- ============================================================ -->
+<section class="section" id="glorious-purpose">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">荣耀的负担</span>
+    <span class="section-latin">— Burdened with glorious purpose</span>
+    <span class="section-desc">从宣告到预言</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- L01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">BURDENED&nbsp;BY&nbsp;SELF</span>
+      </div>
+      <h3 class="card-quote">"I am burdened with glorious purpose."——他说了好多年，才听懂自己说的话。</h3>
+      <div class="card-body">
+        <p>第一次说，是<em>傲慢的宣告</em>——他要征服地球，自封王者，把"负担"挂在嘴上当王冠戴。</p>
+        <p>最后一次说，是<strong>悲剧的预言</strong>——他知道自己要永远坐上那把椅子，"glorious purpose" 变成<em>一种判决</em>。</p>
+        <p>同一句话，前后判若两人——剧的整条弧线，就藏在<strong>这同一句台词的语气变化</strong>里。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"I am Loki of Asgard, and I am burdened with glorious purpose."（我是阿斯加德的洛基，背负着荣耀的使命。）</p>
+          <p>"For all of time. Always."（永世，永远。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">SMILE&nbsp;AS&nbsp;SHIELD</span>
+      </div>
+      <h3 class="card-quote">他的笑，是<em>武器</em>，也是<strong>盾</strong>。</h3>
+      <div class="card-body">
+        <p>挑衅时是武器，被戳穿时是盾——洛基的笑容里<em>从来没有"放松"</em>这种东西。</p>
+        <p>笑得越漂亮，里面藏的越多：嫉妒、不安、对父爱的<strong>未完成的等待</strong>。</p>
+        <p>所以当他第一次<em>不笑</em>地看着 Mobius——观众才意识到，这家伙原来一直在表演。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"I do what I do because... I'm playing the bad guy."（我演坏人，是因为这是我的戏。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">TRICKSTER&nbsp;FATE</span>
+      </div>
+      <h3 class="card-quote">Trickster 不是<em>身份</em>，是一种宿命的<strong>位置</strong>。</h3>
+      <div class="card-body">
+        <p>他不是选择当骗子——是这个家族、这个神话<em>需要</em>有人当骗子，于是把他安在那里。</p>
+        <p>Trickster 永远<strong>被错认</strong>——做好事被当作阴谋，做坏事被当作本性。</p>
+        <p>挣脱这个位置最难——因为你越解释，越像在<em>骗</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"You're the god of mischief. But you could be more."（你是恶作剧之神，但你可以不止如此。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">DIGNITY&nbsp;OF&nbsp;LOSING</span>
+      </div>
+      <h3 class="card-quote">失败者的尊严：输了一万次，<strong>仍然站起来</strong>。</h3>
+      <div class="card-body">
+        <p>洛基不是输不起——他<em>输得起</em>，输得太多了。被弟弟摔、被父亲否、被全宇宙嘲笑。</p>
+        <p>真正的悲剧不是输，是<strong>每次输完还想再来一次</strong>——这股劲既可笑又可敬。</p>
+        <p>他的反派魅力就在这里：你知道他会败，但你<em>不忍心看他停下来</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"I'm not a villain... I'm a survivor."（我不是反派，我是幸存者。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">CHOSEN&nbsp;WEIGHT</span>
+      </div>
+      <h3 class="card-quote">"Glorious purpose" 不是被赋予的——是<strong>自己挑起来的</strong>。</h3>
+      <div class="card-body">
+        <p>奥丁没给他、Thanos 没给他、TVA 也没给他——这把椅子摆在那，<em>没人逼他坐</em>。</p>
+        <p>他坐上去，是因为他终于<strong>认了</strong>——认了自己一直在等的就是这副担子。</p>
+        <p>这才是"负担"最沉的地方：<em>不是被压上的</em>，是自己抱过来的。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"I know what kind of god I need to be... for you. For all of us."（我知道我需要成为什么样的神——为了你，为了我们所有人。）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · 时间与变体 · TIME & VARIANCE -->
+<!-- ============================================================ -->
+<section class="section" id="time-variance">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">时间与变体</span>
+    <span class="section-latin">— Time &amp; Variance</span>
+    <span class="section-desc">TVA 与神圣时间线</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- L06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">YOU&nbsp;DEVIATED</span>
+      </div>
+      <h3 class="card-quote">TVA 抓人的逻辑：你<em>偏离了应该</em>——但谁定义"应该"？</h3>
+      <div class="card-body">
+        <p>TVA 的可怕之处不是它的科技——是它<strong>定义了"应该"</strong>，并以此为名义剪掉一切异类。</p>
+        <p>这是所有体制最古老的伎俩：把"<em>偶然走出的另一条路</em>"重新命名为"<em>错误</em>"。</p>
+        <p>洛基第一次被审判时不是不服——他<strong>很快就看穿了</strong>：定义者从来不在场。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"You picked up the Tesseract, thereby creating a Nexus event."（你拿起了宇宙魔方，由此制造了一个时间分支事件。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">ONE&nbsp;LINE&nbsp;TYRANNY</span>
+      </div>
+      <h3 class="card-quote">神圣时间线是一条单线——它本身就是<strong>另一种暴政</strong>。</h3>
+      <div class="card-body">
+        <p>它许诺"和平"——代价是把所有<em>分叉的可能</em>都剪掉。这听起来眼熟，因为它<strong>就是极权的本来面目</strong>。</p>
+        <p>剧的尖锐就在这里：守护宇宙的不是英雄——是<em>一个修剪园丁的暴君</em>。</p>
+        <p>洛基的终极选择，不是站哪一边——是<strong>不让任何一边垄断"应该"</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"Free will. With free will, you get chaos. With chaos, you get war."（自由意志带来混乱，混乱带来战争。）—— He Who Remains</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">SELF&nbsp;LOVES&nbsp;SELF</span>
+      </div>
+      <h3 class="card-quote">Sylvie 是另一个洛基——爱一个<em>自己</em>，是个荒诞的问题。</h3>
+      <div class="card-body">
+        <p>这段关系不是恋爱——是<strong>两个孤独的人在镜子里看见同类</strong>。Mobius 说："这是最深的自恋。"</p>
+        <p>但剧把它<em>翻面</em>：当你终于遇见另一个你，你才发现——<strong>你们的渴望是反的</strong>。</p>
+        <p>她要烧掉一切，他要保住一切——同一个灵魂，<em>分岔走向了相反的方向</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"This is a new level, even for you."（就算对你来说，这种自恋也是新高度。）—— Mobius</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">READ&nbsp;THE&nbsp;SCRIPT</span>
+      </div>
+      <h3 class="card-quote">看过剧本之后——<strong>演，还是不演？</strong></h3>
+      <div class="card-body">
+        <p>洛基在 TVA 里翻到自己的"个人档案"——看见自己怎么死、怎么败、怎么被全宇宙嘲笑。</p>
+        <p>知道了结局之后，<em>再做出来的每一个动作</em>，性质就变了——它不再是冲动，是<strong>选择</strong>。</p>
+        <p>自由意志的真正考验，不是不知道剧本——是<em>知道了之后</em>，还愿不愿意按自己的样子活。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"Your purpose is to create order."（你的使命是创造秩序。）/ "No. My purpose is mine to choose."（不。我的使命由我自己选。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">LOVE&nbsp;BEFORE&nbsp;BLOOD</span>
+      </div>
+      <h3 class="card-quote">Mobius 是第一个<em>不把他当怪物</em>的人——爱比血亲先到。</h3>
+      <div class="card-body">
+        <p>奥丁是父亲，但他从未真正看洛基；Thor 是兄弟，但他始终在演<em>那个好的</em>。</p>
+        <p>Mobius 不是亲人——他只是一个<strong>愿意坐下来跟洛基好好聊一聊</strong>的人。这就够了。</p>
+        <p>剧最温柔的判断：<em>亲情靠血</em>，但<strong>被看见，靠运气</strong>——洛基等了一千年，才等到一个肯看他的人。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"You're my friend."（你是我的朋友。）—— Loki, 第一次对一个不是兄弟的人这么说</p>
+          <p>"See you. Sometime. Anytime."（再见，某时，任何时候。）—— Mobius</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · 王座之孤 · THRONE OF SOLITUDE -->
+<!-- ============================================================ -->
+<section class="section" id="throne">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">王座之孤</span>
+    <span class="section-latin">— Throne of solitude</span>
+    <span class="section-desc">守时间机器的人</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- L11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">PRICE&nbsp;OF&nbsp;PURPOSE</span>
+      </div>
+      <h3 class="card-quote">他终于实现 glorious purpose——代价是<strong>永恒的孤独</strong>。</h3>
+      <div class="card-body">
+        <p>第一季他要王座，第二季他坐上王座——但<em>这把椅子不是王位</em>，是一台需要有人用手撑住的机器。</p>
+        <p>他赢了——以<strong>从此再也回不到任何人身边</strong>的方式。</p>
+        <p>剧的终极反讽：所有人想要的东西，他都拿到了——而拿到之后，<em>那东西就不是它原本承诺的样子了</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"I don't want a throne. I just want my friends to live."（我不要王座，我只要我的朋友们活着。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">DIVINE&nbsp;AS&nbsp;APART</span>
+      </div>
+      <h3 class="card-quote">神性不是<em>力量大</em>——是<strong>跟所有人隔开</strong>。</h3>
+      <div class="card-body">
+        <p>他终于是神了——能托起所有时间线，能让宇宙运转。同时他也<em>不再是任何人的什么</em>：不是朋友、不是恋人、不是兄弟。</p>
+        <p>这就是神性最冷的一面：<strong>它把你抬到一个没有同类的位置上</strong>。</p>
+        <p>他终于是神，也<em>终于不是了</em>——因为再没有人能跟他平视。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"The God of Stories."（故事之神。）—— 他最终的称号，不是恶作剧之神</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;AUDIENCE</span>
+      </div>
+      <h3 class="card-quote">不再做戏的洛基——因为<em>已经没有观众</em>。</h3>
+      <div class="card-body">
+        <p>从前他的每一个动作都有观众：奥丁、Thor、地球人、镜头——他的"坏"是<strong>表演给某人看的</strong>。</p>
+        <p>坐上王座之后没人看他了——他也<em>不需要</em>表演了。诡计之神终于不诡计了。</p>
+        <p>这是角色弧的终点：<strong>从"被定义的人"变成"自己的人"</strong>——代价是再没人在场来见证他是谁。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"Mischief is a costume. He took it off."（恶作剧只是戏服，他脱掉了。）</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">FOR&nbsp;ALL&nbsp;TIME</span>
+      </div>
+      <h3 class="card-quote">"For all of time, always."——一句台词承下整个角色弧。</h3>
+      <div class="card-body">
+        <p>这句话最先是 TVA 守卫们的口号，<em>带着官僚的麻木</em>。它在剧里反复响起，每次语气都变一点。</p>
+        <p>到最后洛基坐上王座，这句话成了<strong>他对宇宙的承诺</strong>——不再是一句空话，是一笔签到底的合同。</p>
+        <p>编剧的厉害：<em>一句重复的废话</em>，被时间盘出来，变成了角色的<strong>誓言</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"For all time. Always."（永世，永远。）—— 同一句话，前后判若两人</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- L15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">SALVATION&nbsp;ALONE</span>
+      </div>
+      <h3 class="card-quote">这部剧最狠的判断：<strong>救赎是孤独的</strong>，不是热闹的。</h3>
+      <div class="card-body">
+        <p>漫威惯例里救赎是<em>集体的高潮</em>——大家围上来、英雄被欢呼、镜头拉远。</p>
+        <p>洛基的救赎反过来：<strong>他一个人</strong>，坐在一团绿火光里，没有谁鼓掌，没有谁拥抱。</p>
+        <p>这才像真的——<em>真正的成为自己，往往不会有人在场</em>。它发生在一个连镜头都不愿久留的位置上。</p>
+      </div>
+      <details class="card-extras">
+        <summary>剧中延伸</summary>
+        <div class="quotes">
+          <p>"This is not how I wanted it. But this is how it has to be."（这不是我想要的样子，但它只能这样。）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "For all of time.<br>
+    Always."<br>
+    <em>—— 永世，永远。</em>
+  </p>
+  <div class="author">— Loki <small>via Marvel Studios &middot; Loki S1&ndash;S2</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>
