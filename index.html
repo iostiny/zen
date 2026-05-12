@@ -127,8 +127,10 @@ body {
   color: var(--ink-deep);
   font-style: normal;
   font-weight: 600;
-  background: linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%);
-  padding: 0 2px;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
 }
 
 /* ========== TOC label 本期目录 ========== */
@@ -343,11 +345,6 @@ body {
 }
 .colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .colophon .sep { margin: 0 8px; color: var(--rule); }
-.colophon .sister {
-  display: block;
-  margin-top: 6px;
-  font-style: italic;
-}
 
 /* ========== Responsive ========== */
 @media (max-width: 720px) {
@@ -458,7 +455,6 @@ body {
   内容 CC-BY 4.0
   <span class="sep">&middot;</span>
   源码 MIT
-  <span class="sister">姊妹站 <a href="https://doc.iottiny.top">doc.iottiny.top</a> &middot; 中文技术文档与图谱</span>
 </footer>
 
 </body>
