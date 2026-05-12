@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iostiny / zen · 中文读书笔记与思想卡片</title>
-<meta name="description" content="iostiny 维护的中文读书笔记与思想卡片：纳瓦尔宝典、遥远的救世主、天幕红尘，与更多正在路上的书。">
+<meta name="description" content="iostiny 维护的中文读书笔记与思想卡片：纳瓦尔宝典 + 豆豆三部曲（背叛 / 遥远的救世主 / 天幕红尘），与更多正在路上的书。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -325,6 +325,36 @@ body {
 }
 .upcoming-books .sep { color: var(--rule); margin: 0 8px; }
 
+/* ========== Series sub-header 系列子标 ========== */
+.series-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ember);
+  letter-spacing: 3px;
+}
+.series-label::before, .series-label::after {
+  content: '';
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: var(--rule-soft);
+}
+.series-label .zh {
+  font-family: 'Noto Serif SC', serif;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink-deep);
+  letter-spacing: 5px;
+}
+.series-label .latin { color: var(--ink-faint); font-size: 0.88rem; }
+.series-block { margin-bottom: 8px; }
+
 /* ========== Colophon ========== */
 .colophon {
   margin-top: 56px;
@@ -397,7 +427,7 @@ body {
   <span class="latin">Table of Contents</span>
 </div>
 
-<!-- ============== Issue cards ============== -->
+<!-- ============== Issue cards · 独立读本 ============== -->
 <div class="issues">
 
   <a class="issue" href="./naval/">
@@ -417,10 +447,37 @@ body {
     </div>
   </a>
 
+</div>
+
+<!-- ============== 豆豆三部曲 ============== -->
+<div class="series-label">
+  <span class="zh">豆豆 &middot; 三部曲</span>
+  <span class="latin">DouDou Trilogy</span>
+</div>
+
+<div class="issues series-block">
+
+  <a class="issue" href="./bei-pan/">
+    <div class="issue-meta">
+      <span class="issue-no">特辑 № 04</span>
+      <span class="issue-author">豆豆 &middot; 三部曲 № I</span>
+    </div>
+    <h2 class="issue-title">背叛</h2>
+    <div class="issue-latin">A reading of 豆豆's novel</div>
+    <div class="issue-rule"></div>
+    <p class="issue-pull">
+      看见全局的人，最容易滥用全局。
+    </p>
+    <div class="issue-stats">
+      <span class="issue-tags">15 张卡 <span class="sep">&middot;</span> 高手之困 / 背叛之层 / 道义之外</span>
+      <span class="issue-cta">展卷 &rarr;</span>
+    </div>
+  </a>
+
   <a class="issue" href="./tian-dao/">
     <div class="issue-meta">
       <span class="issue-no">特辑 № 02</span>
-      <span class="issue-author">豆豆 &middot; 中</span>
+      <span class="issue-author">豆豆 &middot; 三部曲 № II</span>
     </div>
     <h2 class="issue-title">遥远的救世主</h2>
     <div class="issue-latin">A reading of 豆豆's novel</div>
@@ -437,7 +494,7 @@ body {
   <a class="issue" href="./tian-mu-hong-chen/">
     <div class="issue-meta">
       <span class="issue-no">特辑 № 03</span>
-      <span class="issue-author">豆豆 &middot; 中</span>
+      <span class="issue-author">豆豆 &middot; 三部曲 № III</span>
     </div>
     <h2 class="issue-title">天幕红尘</h2>
     <div class="issue-latin">A reading of 豆豆's novel</div>
@@ -461,7 +518,6 @@ body {
     <span class="sep">&middot;</span> 道德经
     <span class="sep">&middot;</span> 穷查理宝典
     <span class="sep">&middot;</span> 思考，快与慢
-    <span class="sep">&middot;</span> 背叛 &middot; 豆豆
     <span class="sep">&middot;</span> ……
   </div>
 </div>

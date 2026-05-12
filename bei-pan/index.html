@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>背叛 · 卡片版 · iostiny / zen</title>
+<meta name="description" content="豆豆《背叛》中文卡片版：高手之困、背叛的层级、道义之外三章共 15 张判断卡。豆豆三部曲第一部。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#high-hand"><span class="num">01</span>高手之困</a>
+  <a href="#betrayal"><span class="num">02</span>背叛之层</a>
+  <a href="#beyond"><span class="num">03</span>道义之外</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>背叛</h1>
+    <div class="latin">A reading of 豆豆's novel &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 04 &middot; 三部曲 № I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  豆豆<strong>三部曲的第一部</strong>，宋一坤还没有丁元英的稳，也没有叶子农的冷。
+  他能看见全局，却被全局<em>反噬</em>。
+  这一册把《背叛》里关于<strong>高手</strong>、<strong>背叛</strong>、<strong>道义</strong>的判断，
+  拆成十五张卡片——
+  它告诉你：<em>看见</em>不等于看清。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 高手之困 · THE HIGH-HAND'S TRAP -->
+<!-- ============================================================ -->
+<section class="section" id="high-hand">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">高手之困</span>
+    <span class="section-latin">— Cursed by his own seeing</span>
+    <span class="section-desc">能看见的人最难自处</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- B01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">CURSE&nbsp;OF&nbsp;SEEING</span>
+      </div>
+      <h3 class="card-quote">看见全局的人，最容易<em>滥用</em>全局。</h3>
+      <div class="card-body">
+        <p>宋一坤的悲剧从他第一次<strong>看清</strong>开始——看清了规律、看清了人、看清了局。</p>
+        <p>看清之后，他面前出现一个诱惑：既然我能预演结果，<em>为什么不替天行道</em>？</p>
+        <p>这就是高手之困——能力越大，越想做"<strong>规则之上的人</strong>"。而规则之上没有人，只有<em>下一个坑</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"他能把每一步都算到，但他算不到的是——他自己也在局里。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">WIT&nbsp;WITHOUT&nbsp;DAO</span>
+      </div>
+      <h3 class="card-quote">智不附德，越聪明越危险。</h3>
+      <div class="card-body">
+        <p>智谋是把刀——它不分善恶，<strong>谁握谁用</strong>。</p>
+        <p>没有德作为方向，再快的刀也只是杀自己——因为最后一个对手必然是<em>自己的影子</em>。</p>
+        <p>豆豆的整个三部曲都在反复说这句话：丁元英用德拴住了智，叶子农用规律拴住了智；<em>宋一坤</em>没拴。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"道德是智慧的缰绳——丢了缰绳的智慧，跑得越快，摔得越惨。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">PRISON&nbsp;ARCHITECT</span>
+      </div>
+      <h3 class="card-quote">狱中策千里——既是奇迹，也是<em>牢</em>。</h3>
+      <div class="card-body">
+        <p>宋一坤在监狱里布下一盘惊天的局——身陷囹圄而心驰天下，这是<strong>悟性的极致</strong>。</p>
+        <p>但同时也是悟性的牢：他被现实捆住手脚，只能用谋略<em>替代</em>行动；用脑替代身。</p>
+        <p>这种替代<em>能做出奇迹</em>——但奇迹背后是一个被压抑的真人。真人迟早会以代价的方式归来。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"一个在牢里运筹千里的人，看着像神；可他不过是被困得太久，把全部生命搬进了脑子里。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">GAMBLE&nbsp;OF&nbsp;ALL</span>
+      </div>
+      <h3 class="card-quote">高手都在赌——赌赢一次是天才，赌输一次是<strong>骨灰</strong>。</h3>
+      <div class="card-body">
+        <p>表面是局，里子是赌：赌人性的走向、赌时机的窗、赌规律的兑现。</p>
+        <p>区别在赌注大小——<em>赌一笔生意</em>叫商人，<em>赌整条命</em>叫宋一坤。</p>
+        <p>所以判断高手不看他赢过几次，看他<strong>能不能离桌</strong>——离不开桌的，迟早走完赌徒的剧本。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"赢钱的时候离开赌桌，是修养；想离离不开的，是病。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">CANNOT&nbsp;BUY&nbsp;SELF</span>
+      </div>
+      <h3 class="card-quote">用规律赚钱可以，<em>用钱买回自己</em>不行。</h3>
+      <div class="card-body">
+        <p>宋一坤的算盘是：先用智赚足够大的本，再用本买一个"<strong>普通人的人生</strong>"——爱情、安稳、归属。</p>
+        <p>但他算漏了——人不是商品，<em>清白</em>更不是。能买回的从来不是清白，只是<em>看起来像清白</em>的安排。</p>
+        <p>这是<strong>三部曲所有主角共有的盲点</strong>，宋一坤是第一个撞上去的。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"他想用一桩大事换一辈子的安稳——大事做成了，安稳却到不了他这里。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · 背叛之层 · LAYERS OF BETRAYAL -->
+<!-- ============================================================ -->
+<section class="section" id="betrayal">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">背叛之层</span>
+    <span class="section-latin">— Betrayal goes deeper than rules</span>
+    <span class="section-desc">背叛规则，还是背叛自己</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- B06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">SHALLOW&nbsp;VS&nbsp;DEEP</span>
+      </div>
+      <h3 class="card-quote">背叛规则容易，<em>背叛自己</em>很难。</h3>
+      <div class="card-body">
+        <p>书名叫"背叛"——但豆豆问的不是"<em>谁背叛了谁</em>"，而是<strong>背叛在哪一层发生</strong>。</p>
+        <p>背叛规则只需要胆量；背叛自己需要——<em>先把昨天的自己杀掉</em>。</p>
+        <p>大多数人以为自己在背叛规则，<em>其实在背叛自己</em>——而他们不知道。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"背叛社会比背叛自己容易得多——前者只损失安全，后者损失整个人。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">SILENT&nbsp;EDIT</span>
+      </div>
+      <h3 class="card-quote">真正的背叛——<strong>偷偷修改了自己原来的判断</strong>。</h3>
+      <div class="card-body">
+        <p>你不会大声宣布"<em>我以前错了</em>"——你只是在某个夜里悄悄把那条判断改掉，第二天像没事一样行动。</p>
+        <p>这种<em>静默的自我修订</em>，是人最常见的背叛形式；它发生时没有动静，但你已经不是<strong>原来的你</strong>了。</p>
+        <p>觉者的功夫之一：<em>看见自己的静默修订</em>——并诚实地承认它。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"人最常的不诚实，不是骗别人——是骗自己改了主意还假装没改。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">CHOOSING&nbsp;SELF</span>
+      </div>
+      <h3 class="card-quote">爱情遇到原则——你以为在选她，<em>其实在选你想成为的自己</em>。</h3>
+      <div class="card-body">
+        <p>夏英杰是宋一坤的镜子——他在她面前的每一次选择，本质都是<strong>选他自己</strong>。</p>
+        <p>选了她，是选"我还配做一个像样的人"；不选她，是承认"我已经不是了"。</p>
+        <p>所以爱情里的两难，从来不是<em>对方的难题</em>，是<strong>你与昨天的你的难题</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"她不是他的救赎，她是他给自己留的那条路——他能不能走，看他还认不认那条路。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">UNCOMPROMISED</span>
+      </div>
+      <h3 class="card-quote">夏英杰的纯粹：她不审判，但她<em>不被同化</em>。</h3>
+      <div class="card-body">
+        <p>夏英杰知道宋一坤的<em>所有阴影</em>，但她不指责；她也没有装作不知道。</p>
+        <p>她做的事很简单：<strong>她不变</strong>。她爱他，但她不跟他一起变成另一种人。</p>
+        <p>这种"不被同化的爱"，比任何说教都重——因为她<em>用自己的存在</em>对他提出一个问题：你想成为什么样的人？</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"她不审判他，但她也不陪他堕落——她爱他，但她不许自己丢了自己。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">LAST&nbsp;LOYALTY</span>
+      </div>
+      <h3 class="card-quote">宋一坤的死——是最后一次<strong>不背叛</strong>。</h3>
+      <div class="card-body">
+        <p>当他发现自己已经走到<em>无法回头</em>的地方——继续走会拖夏英杰下水，回头又没了路。</p>
+        <p>他选择的不是逃避，是<strong>用死把自己定格在她爱的那一刻</strong>。</p>
+        <p>这是一个聪明人能想到的最不聪明的解法——也是他这辈子<em>唯一不算计</em>的一次。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"他最后做了一件没有算计的事——他用命告诉她：你爱的那个人，还活着。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · 道义之外 · BEYOND MORALITY -->
+<!-- ============================================================ -->
+<section class="section" id="beyond">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">道义之外</span>
+    <span class="section-latin">— The early code, beneath the morality</span>
+    <span class="section-desc">文化属性的雏形</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- B11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">EARLY&nbsp;CODE</span>
+      </div>
+      <h3 class="card-quote">文化属性的<em>雏形</em>——豆豆在这一本里还没说出口。</h3>
+      <div class="card-body">
+        <p>你能从宋一坤、夏英杰、方子云身上看到三种<strong>底层程序</strong>——只是豆豆这时候还没用"文化属性"四个字。</p>
+        <p>到了《遥远的救世主》才点破，到了《天幕红尘》才把方法论<em>磨成刀</em>。</p>
+        <p>所以读三部曲的顺序：可以倒着读——<em>先方法，再原型</em>。回到《背叛》时，你会看见所有人物背后的<strong>暗码</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸</summary>
+        <div class="quotes">
+          <p>"这本书没用'文化属性'四个字，但每一个人物的命都是它写的。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">CANNOT&nbsp;SAVE&nbsp;SELF</span>
+      </div>
+      <h3 class="card-quote">强者能救别人，<em>救不了自己</em>。</h3>
+      <div class="card-body">
+        <p>宋一坤能算计千里之外的局，但他<strong>看不见自己脚下的坑</strong>——因为他就站在坑里。</p>
+        <p>这不是聪明不够，是<em>位置不对</em>——你不能用同一双眼同时<strong>看世界</strong>和<strong>看自己</strong>。</p>
+        <p>强者的局：他能给别人指路，但<em>他自己的路得靠别人指</em>——而他通常不肯听。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸</summary>
+        <div class="quotes">
+          <p>"高手都瞎在自己脚下——能救别人不算本事，能让自己被人救才是大本事。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">SCHEME&nbsp;VS&nbsp;CONTRACT</span>
+      </div>
+      <h3 class="card-quote">中国式机谋 vs 西方式契约——豆豆早期的<strong>对照</strong>。</h3>
+      <div class="card-body">
+        <p>《背叛》里关于"<em>关系</em>"和"<em>规则</em>"的张力，是豆豆后来三部曲的<strong>母题</strong>。</p>
+        <p>机谋的世界靠人情和默契——它柔软但<em>不可重复</em>；契约的世界靠规则和文书——它生硬但<em>可复制</em>。</p>
+        <p>两个世界没有谁对谁错——只有<strong>谁的条件成熟</strong>。豆豆从这里出发，最后走到"见路不走"。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸</summary>
+        <div class="quotes">
+          <p>"我们的好处在于一通百通；坏处在于——所有的好处都不可复制。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">MORAL&nbsp;FILTER</span>
+      </div>
+      <h3 class="card-quote">你的"恶"，是别人的<em>求生</em>。</h3>
+      <div class="card-body">
+        <p>道德是一个滤镜——它由你<strong>所处的位置</strong>决定，而不是由"绝对的善"决定。</p>
+        <p>站在岸上看落水的人挣扎，他的动作很难看；坐在水里你才知道，<em>那是不死的最优解</em>。</p>
+        <p>这不是相对主义，是<strong>位置感</strong>——评价之前先想：我是不是在这件事里？</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸</summary>
+        <div class="quotes">
+          <p>"道德判断之前，先问自己——你在什么位置？你站着说话，他坐着求生，这话就不该说。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- B15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">WHAT&nbsp;REMAINS</span>
+      </div>
+      <h3 class="card-quote">背叛之后剩下的，是<strong>看清</strong>——不是悔。</h3>
+      <div class="card-body">
+        <p>这是豆豆给整本书的<em>底音</em>：人会背叛、会迷失、会走错——这都是<strong>规律的一部分</strong>。</p>
+        <p>真正的成长不是回到"<em>没有背叛过</em>"的状态——回不去——是带着这次背叛，<strong>看清下一次</strong>。</p>
+        <p>所以《背叛》是一本起点的书——它不解决问题，它<em>设定了三部曲的所有命题</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸</summary>
+        <div class="quotes">
+          <p>"经历了背叛而后看清的人，比从未背叛过的人，离道更近。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "她不是他的救赎，<br>
+    她是他给自己留的那条路——<br>
+    他能不能走，<br>
+    看他还认不认那条路。"
+  </p>
+  <div class="author">— 关于夏英杰与宋一坤 <small>via 豆豆《背叛》</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>
