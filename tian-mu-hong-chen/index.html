@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天幕红尘 · 卡片版 · iostiny / zen</title>
+<meta name="description" content="豆豆《天幕红尘》中文卡片版：见路不走、信与狠、觉者无救三章共 15 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#no-borrowed-path"><span class="num">01</span>见路不走</a>
+  <a href="#faith-and-folly"><span class="num">02</span>信与狠</a>
+  <a href="#no-savior"><span class="num">03</span>觉者无救</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>天幕红尘</h1>
+    <div class="latin">A reading of 豆豆's novel &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 03 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  <strong>见路不走</strong>——豆豆借叶子农之口，把<em>实事求是</em>四个字磨成一把刀。
+  这一册把《天幕红尘》里关于<strong>方法</strong>、<strong>信仰</strong>、<strong>觉者</strong>的判断，
+  拆成十五张卡片——
+  它们不教你如何赢，它们教你<em>认清条件</em>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 见路不走 · NO BORROWED PATH -->
+<!-- ============================================================ -->
+<section class="section" id="no-borrowed-path">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">见路不走</span>
+    <span class="section-latin">— The path that isn't borrowed</span>
+    <span class="section-desc">实事求是更具体的说法</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">UNBORROWED&nbsp;PATH</span>
+      </div>
+      <h3 class="card-quote">见路不走——不是不走，是不被别人走过的路<em>规定</em>。</h3>
+      <div class="card-body">
+        <p>"路"是经验、是范本、是"大家都这么干"。<strong>不走的不是路</strong>，是把那条路当成必走之路的<em>执念</em>。</p>
+        <p>别人走通了，是别人当时的条件凑齐了；你照搬，条件错位，那条路就是你的坑。</p>
+        <p>这四个字不是反经验，是把经验<strong>降级</strong>——它从结论降级回参考。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"见路不走是种实事求是的态度，是更具体的、更接近事物本质的实事求是。"</p>
+          <p>"见路非路，即见因果。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">CONDITIONS</span>
+      </div>
+      <h3 class="card-quote">有条件就是可能，没条件就是<em>不可能</em>。</h3>
+      <div class="card-body">
+        <p>事不成不是因为你不够努力，是<strong>条件没凑齐</strong>。条件凑齐了，傻子也能成。</p>
+        <p>叶子农眼里没有"应不应该"，只有"<em>能不能</em>"——能与不能，看条件这把秤。</p>
+        <p>所以他不预测、不许诺，只盯条件——条件到了就动，没到就等。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"具备了条件就是可能，不具备条件就是不可能。"</p>
+          <p>"事物的可能与不可能，只看条件的具备程度。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">TWO&nbsp;CHAINS</span>
+      </div>
+      <h3 class="card-quote">经验主义和本本主义，是<strong>两副镣铐</strong>。</h3>
+      <div class="card-body">
+        <p>一副叫"<em>我经历过</em>"——把过去的运气当成法则；一副叫"<em>书上是这么说的</em>"——把别人的总结当成现场。</p>
+        <p>两副镣铐都把"看"换成了"信"，把<strong>看见事物</strong>换成了<strong>看见自己的脑袋</strong>。</p>
+        <p>解锁的钥匙只有一把：低头看条件，<em>不抬头看权威</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"实事求是没法用，因为它太抽象，所以才需要一个更具体的提法——见路不走。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">SEE&nbsp;PARTICULAR</span>
+      </div>
+      <h3 class="card-quote">看个性，不看共性。</h3>
+      <div class="card-body">
+        <p>"共性"是事后归纳出的<em>横截面</em>——它解释昨天，不预测今天。</p>
+        <p>每件事的"<strong>个性</strong>"，才是当下真实在动的东西——人、地、时、势，没两件完全一样。</p>
+        <p>用共性套个性，是<em>站在岸上指挥水流</em>；水从来不听你的。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"实事求是难就难在'实事'两个字——人最难看见的是事，最容易看见的是自己的念头。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;PATCHING</span>
+      </div>
+      <h3 class="card-quote">不要<em>拼凑</em>可能。</h3>
+      <div class="card-body">
+        <p>缺条件的时候，人容易找替代品：用希望补能力、用感情补判断、用关系补市场。</p>
+        <p>这种<strong>拼凑出来的"可能"</strong>，撑不到结果就会塌——而且塌的时候你以为是运气不好。</p>
+        <p>真正的高手敢承认<em>"现在不行"</em>——不行就等，不行就退；逞强才是最贵的成本。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"条件不具备的事，越急越坏；条件具备了的事，挡都挡不住。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · 信与狠 · FAITH AND FOLLY -->
+<!-- ============================================================ -->
+<section class="section" id="faith-and-folly">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">信与狠</span>
+    <span class="section-latin">— Faith mistaken for ferocity</span>
+    <span class="section-desc">罗家明用命换来的一课</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">FAITH&nbsp;VS&nbsp;WISH</span>
+      </div>
+      <h3 class="card-quote">把"愿"当成"信"，是要命的错。</h3>
+      <div class="card-body">
+        <p>罗家明跳楼了——因为他把<em>"我想赢"</em>当成<em>"我会赢"</em>，把<em>"我够狠"</em>当成<em>"我够对"</em>。</p>
+        <p><strong>信，是看见因果之后的笃定</strong>；愿，是看不清因果时的咬牙。</p>
+        <p>两者表面都叫"坚持"，结果差一条命。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"老九用了一个'信'字，结果把命都搭进去了——他信的是自己的狠，不是规律。"</p>
+          <p>"信狠不立，狠是赌徒的胆，不是觉者的眼。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">FAITH&nbsp;=&nbsp;SEEING</span>
+      </div>
+      <h3 class="card-quote">信，是<strong>认知</strong>的产物，不是<strong>意志</strong>的产物。</h3>
+      <div class="card-body">
+        <p>真的"信"不是嘴上说"我信"，是你<em>已经看清楚了</em>这件事的来龙去脉，所以不慌。</p>
+        <p>看清楚的人，<strong>动作很轻</strong>；没看清楚的人，靠意志硬撑——撑出来的样子像信，里子是恐惧。</p>
+        <p>判断一个人是真信还是假信：看他在<em>不利的时候</em>慌不慌。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"开了天眼的人，看的是有无相生，所以无所求而无所不得。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">METHOD&nbsp;NOT&nbsp;DOGMA</span>
+      </div>
+      <h3 class="card-quote">马克思主义不是<em>结论</em>，是<strong>实事求是</strong>的方法。</h3>
+      <div class="card-body">
+        <p>把它当结论，就成了本本主义——一种新的迷信。叶子农<em>反复地说</em>：方法可贵，教条要命。</p>
+        <p>它告诉你<strong>怎么看</strong>事物——从生产力到生产关系，从条件到结果——而不是<em>告诉你结论是什么</em>。</p>
+        <p>结论永远在变；方法不变，所以才珍贵。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"马克思主义是方法论，不是结论；是实事求是，不是教条。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">FRUIT&nbsp;OF&nbsp;CONDITIONS</span>
+      </div>
+      <h3 class="card-quote">共产主义是条件成熟之<em>果</em>，不是渴望出来的<em>天堂</em>。</h3>
+      <div class="card-body">
+        <p>它不是道德的奖励，也不是政治的口号——是生产力发展到某一刻，<strong>自然结出的果</strong>。</p>
+        <p>条件没到，谁喊都没用；条件到了，谁拦也拦不住。</p>
+        <p>把"果"<em>提前</em>种到地里，结的不是果，是<strong>泡沫</strong>——历史已经验证过几次了。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"共产主义实现的不是愿望，是条件——条件不到，再美的理想也只是理想。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">PHANTOM&nbsp;FOE</span>
+      </div>
+      <h3 class="card-quote">死在<em>不存在的对手</em>手里——最常见的死法。</h3>
+      <div class="card-body">
+        <p>罗家明以为他在跟市场较劲，其实他在跟<strong>自己脑子里的市场</strong>较劲。</p>
+        <p>那个对手不存在，所以他打不到；打不到就更狠，更狠就更偏离，直到耗尽。</p>
+        <p>看清"<em>对手是不是真的存在</em>"，比看清"<em>怎么赢</em>"重要十倍。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"很多人是被自己想象出来的对手累死的，而那个对手从来没出过场。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · 觉者无救 · NO SAVIOR FOR THE AWAKE -->
+<!-- ============================================================ -->
+<section class="section" id="no-savior">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">觉者无救</span>
+    <span class="section-latin">— The awake do not seek to be saved</span>
+    <span class="section-desc">在红尘里看红尘</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">NOODLES&nbsp;AS&nbsp;DAO</span>
+      </div>
+      <h3 class="card-quote">老九的面，好在<em>不想着好</em>。</h3>
+      <div class="card-body">
+        <p>每一碗都是<strong>当下那一碗</strong>——他没在想"上一碗的客人"，也没在想"下一碗的利润"。</p>
+        <p>专注本身就是道——不带<em>滤镜</em>地把这一件事做完，下一件事自然来。</p>
+        <p>面馆能撑住人气，靠的不是配方，是<strong>这种当下感</strong>——配方写得出来，当下感写不出来。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"一碗面要做到极致，靠的不是手艺，是把这碗面当回事。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">UNCOPYABLE</span>
+      </div>
+      <h3 class="card-quote">面馆能复制吗——技艺可复制，<strong>缘</strong>不可复制。</h3>
+      <div class="card-body">
+        <p>柏林面馆的算盘很精——把流程标准化、把成本砍下来、把店开到欧洲。</p>
+        <p>技艺确实复制了，但<em>客流</em>没复制——因为客流要的不是面，是<strong>那碗面背后的关系网</strong>。</p>
+        <p>这就是"见路不走"的实战：套了别人的路，缺了自己的条件，<em>看着对，做出来错</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"九哥的面馆离开了九哥那片土地、那群人、那份长年累月的处事——就是另一个生意了。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">CLEAR&nbsp;LOVE</span>
+      </div>
+      <h3 class="card-quote">林雪红动心，但不失"理"。</h3>
+      <div class="card-body">
+        <p>她爱叶子农，但她<em>爱得清楚</em>——她知道这份爱是建立在"<strong>看见</strong>"上，不是占有上。</p>
+        <p>女人爱觉者，最难的是<em>不把他拉回红尘</em>——拉回来他就不是他了，那她也不爱了。</p>
+        <p>她的克制不是无情，是<strong>更深的爱</strong>：让他保持成他的样子。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"她爱他不是因为他是好人，是因为他是个不愿意装的人。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">AWAKE&nbsp;UNSAVED</span>
+      </div>
+      <h3 class="card-quote">叶子农被杀——<strong>觉者不被救，也不需被救</strong>。</h3>
+      <div class="card-body">
+        <p>他看清了局，也<em>看清了自己</em>会在这个局里被打掉——他没躲，也没怨。</p>
+        <p>觉者的"觉"，包括<strong>接受自己的结局</strong>——不是消极，是把"我"也放进因果里。</p>
+        <p>真正的安宁是：<em>就算结局这样，也没什么</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"觉者不悲不喜，因为他既不抗拒，也不期待。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">IN&nbsp;THE&nbsp;DUST</span>
+      </div>
+      <h3 class="card-quote">天幕之下还是红尘——觉者<strong>不出尘，在尘中</strong>看尘。</h3>
+      <div class="card-body">
+        <p>这本书的名字已经说尽——"<em>天幕</em>"是顶，"<em>红尘</em>"是地；觉者站在中间，<strong>两边都不躲</strong>。</p>
+        <p>不上山修行，也不下海逐利——就在人群里，做一个看得清楚、动作很轻的人。</p>
+        <p>读这本书的人，最后能拿走的不是结论，是<em>一双不一样的眼睛</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"天高不算高，人心比天高；红尘有多深，看你站多远。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "见路不走，<br>
+    见路非路，<br>
+    即见因果。"
+  </p>
+  <div class="author">— 叶子农 <small>via 豆豆《天幕红尘》</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>
