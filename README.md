@@ -1,15 +1,15 @@
-# iostiny / life
+# iostiny / zen
 
 中文读书笔记 · 思想卡片 · 长期思考。
 
-部署在 `https://life.iottiny.top/`（GitHub Pages，main branch / root）。
+部署在 `https://zen.iottiny.top/`（GitHub Pages，main branch / root）。
 
 跟 [`iostiny/doc`](https://github.com/iostiny/doc) 是姊妹站：
 
 | | 内容 | 域名 |
 |---|---|---|
 | `doc` | 技术文档与协议图谱 | doc.iottiny.top |
-| `life` | 读书 · 思想 · 心智 | life.iottiny.top |
+| `zen` | 读书 · 思想 · 心智 | zen.iottiny.top |
 
 ## 当前内容
 

@@ -1,23 +1,23 @@
-# AGENTS.md — iostiny / life
+# AGENTS.md — iostiny / zen
 
 给在本仓库工作的 AI 编码代理的项目指南。
 
 ## 仓库定位
 
-`life` 是 iostiny 维护的**中文读书笔记 / 思想卡片**集合，是 [`iostiny/doc`](https://github.com/iostiny/doc) 的姊妹站。
+`zen` 是 iostiny 维护的**中文读书笔记 / 思想卡片**集合，是 [`iostiny/doc`](https://github.com/iostiny/doc) 的姊妹站。
 
-| | doc | life（本仓库） |
+| | doc | zen（本仓库） |
 |---|---|---|
 | 主题 | 技术文档 · 协议图谱 | 读书 · 思想 · 心智 |
-| 视觉 | cream + cherry red · JetBrains Mono | 纸张/报纸感 · 润米 + 赭石墨 + 黄栎 · Noto Serif SC |
+| 视觉 | cream + cherry red · JetBrains Mono | 枯山水 · 沙白 + 苔藓绿 + 沙金 · Noto Serif SC |
 | 阅读姿态 | 精读 · 反复回查 · 写代码 | 慢读 · 反复回味 · 当下做选择 |
 
-部署：`life.iottiny.top`（GitHub Pages，main branch / root）。
+部署：`zen.iottiny.top`（GitHub Pages，main branch / root）。
 
 ## 目录结构
 
 ```
-life/
+zen/
 ├── index.html              ← 站点 hub：报头 + 本期目录 + 特辑卡 + 筹备中
 ├── naval/                  ← 特辑 № 01 · 纳瓦尔宝典
 │   └── index.html
@@ -37,21 +37,22 @@ life/
 
 ## 视觉规范（跟 doc 拉开）
 
-不复用 doc 的 cherry + cream 主调。本站走**报纸/纸张感**：
+不复用 doc 的 cherry + cream 主调。本站走**枯山水 / 日式禅**：
 
 ```css
---paper:       #f6f1e7;  /* 主背景 牛皮纸 */
---paper-light: #fdfaf2;  /* 浅一层 */
---paper-card:  #fbf6ea;  /* 卡片底色 */
---ink:         #2a2620;  /* 正文墨色 */
---ink-deep:    #1a1612;  /* 标题 */
---ink-soft:    #6b5d4f;  /* 次要文字 */
---ink-faint:   #9a8f7f;  /* 极弱 */
---rule:        #c9bca5;  /* 实分隔线 */
---rule-soft:   #e0d6c0;  /* 浅分隔线 */
---accent:      #b8860b;  /* 黄栎重点 */
---accent-soft: #d4a849;  /* 软重点 / 划线高亮 */
---ember:       #a13e1f;  /* 印章红，谨慎用 */
+--paper:       #ece8df;  /* 沙白 / 风化石面 */
+--paper-light: #f4f1e8;  /* 浅一层 */
+--paper-card:  #f2eee5;  /* 卡片底（比 paper 略亮，浮起来）*/
+--ink:         #1f1f1f;  /* 石墨 */
+--ink-deep:    #0e0e0e;  /* 重墨 / 题字 */
+--ink-soft:    #5e5a52;  /* 灰墨 / 次要 */
+--ink-faint:   #8d8a82;  /* 远石灰 */
+--rule:        #bab5a8;  /* 石线 */
+--rule-soft:   #d4d0c4;  /* 浅石线 */
+--accent:      #5e7548;  /* 苔藓绿 / 主标记 */
+--accent-soft: #8aa370;  /* 浅苔 */
+--accent-glow: rgba(138, 163, 112, 0.28);  /* highlighter */
+--ember:       #a08856;  /* 沙金 / 次要 accent */
 ```
 
 字体：
@@ -60,19 +61,19 @@ life/
 - 西文 / 编号 / attribution / italic：`Cormorant Garamond`（衬线 italic）
 - **不**使用 JetBrains Mono（那是 doc 的标记）
 
-报纸感的关键视觉元素：
+枯山水感的关键视觉元素：
 
 - **Masthead 报头**：4px 双线 top（hub）/ 3px 双线 top（子页） + 1px 紧贴的 ::after 形成"双线压尾"
-- **Section header 章节刊头**：双层底线（2px 实 + ::after 1px 紧贴），编号 `№ 01` italic
+- **Section header 章节刊头**：双层底线（2px 实 + ::after 1px 紧贴），编号 `№ 01` italic 用苔绿
 - **Lede 前言**：italic 居中 + 上下短横线装饰
-- **Card 剪报**：黄栎 highlighter 划在 `<strong>` 下方（`linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%)`）
-- **背景微纹理**：极浅的 radial-gradient 点阵（rgba(58,46,38,0.05) 1px @ 22px）模拟纸张颗粒
+- **Card 剪报**：苔绿 highlighter 划在 `<strong>` 下方（`linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%)`）
+- **背景微纹理**：极浅的 radial-gradient 灰点（rgba(30,30,30,0.05) 1px @ 22px）模拟石面沙粒
 - **Ornament**：章节间用 `─── ◆ ───` 居中装饰线
 - **Colophon 版权印刷信息**：底部 mono italic + dotted 下划线链接
 
 ### Hub vs 子页的视觉区别（要保留）
 
-- **Hub 的 masthead 更大**：标题 3.4rem（子页 2.8rem），双线更粗（4px vs 3px），"`/`" 用 accent 色突出
+- **Hub 的 masthead 更大**：标题 3.4rem（子页 2.8rem），双线更粗（4px vs 3px），"`/`" 用 accent（苔绿）色突出
 - **Hub 的内容是"目录"**：issue cards 是大卡（420px+，单卡占据大量空间），不像子页的内联 cards（小、平铺）
 - **Hub 不带 TOC 浮动栏**：内容短，不需要
 - **子页带 TOC 浮动栏**：贴右边垂直排列，仅 ≥720px 显示
@@ -81,7 +82,7 @@ life/
 
 - **金句优先**：每张卡以一句核心判断开篇（`.card-quote`），≤ 30 字。读者扫一眼就能记住。
 - **3-5 段细解**：紧跟金句给出 2-4 行展开，每段独立成立。
-- **黄栎下划线**：用 `<strong>` 包关键词，CSS 自动加 highlighter。一张卡 1-3 处即可，多了就麻木。
+- **苔绿下划线**：用 `<strong>` 包关键词，CSS 自动加 highlighter。一张卡 1-3 处即可，多了就麻木。
 - **可折叠的"原文延伸 / 延伸金句"**：用 `<details class="card-extras">` 装 1-3 条原书引言。默认折叠，让卡面保持干净。
 - **不要**强行套 SVG。本站不是图谱站，文字 + typography 就是视觉。
 - **不要**为了对称凑卡数。每个 section 5-8 张刚刚好；写不动就停。
@@ -109,6 +110,6 @@ life/
 - ❌ 引入 npm / 构建步骤 / SPA
 - ❌ 复用 doc 的 cherry red / JetBrains Mono（那是 doc 的视觉签名，本站要清楚区分）
 - ❌ 把读书笔记写成"技术文档"语气（这里是慢读、是品味、是判断；不是 API 文档）
-- ❌ 为了"看起来丰富"塞图标、emoji、装饰图 —— 报纸的力量在留白和 typography
+- ❌ 为了"看起来丰富"塞图标、emoji、装饰图 —— 枯山水的力量在留白和 typography
 - ❌ 把多本书塞进一个 HTML 文件（每本书一个子目录是硬性结构）
 - ❌ 跨子目录共享 CSS / JS 文件

@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iostiny / life · 中文读书笔记与思想卡片</title>
+<title>iostiny / zen · 中文读书笔记与思想卡片</title>
 <meta name="description" content="iostiny 维护的中文读书笔记与思想卡片：纳瓦尔宝典、遥远的救世主，与更多正在路上的书。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper:       #f6f1e7;
-  --paper-light: #fdfaf2;
-  --paper-card:  #fbf6ea;
-  --ink:         #2a2620;
-  --ink-deep:    #1a1612;
-  --ink-soft:    #6b5d4f;
-  --ink-faint:   #9a8f7f;
-  --rule:        #c9bca5;
-  --rule-soft:   #e0d6c0;
-  --accent:      #b8860b;
-  --accent-soft: #d4a849;
-  --accent-glow: rgba(212, 168, 73, 0.3);
-  --ember:       #a13e1f;
+  --paper:       #ece8df;  /* 沙白 / 风化石面 */
+  --paper-light: #f4f1e8;  /* 浅一层 */
+  --paper-card:  #f2eee5;  /* 卡片底色（比 paper 略亮，让卡浮起来）*/
+  --ink:         #1f1f1f;  /* 石墨 */
+  --ink-deep:    #0e0e0e;  /* 重墨 / 题字 */
+  --ink-soft:    #5e5a52;  /* 灰墨 / 次要 */
+  --ink-faint:   #8d8a82;  /* 远石灰 */
+  --rule:        #bab5a8;  /* 石线 */
+  --rule-soft:   #d4d0c4;  /* 浅石线 */
+  --accent:      #5e7548;  /* 苔藓绿 / 主标记 */
+  --accent-soft: #8aa370;  /* 浅苔 */
+  --accent-glow: rgba(138, 163, 112, 0.28);  /* highlighter */
+  --ember:       #a08856;  /* 沙金 / 次要 accent */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +37,7 @@ body {
   padding: 36px 28px 60px;
   max-width: 1080px;
   margin: 0 auto;
-  background-image: radial-gradient(rgba(58, 46, 38, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
   background-size: 22px 22px;
   -webkit-font-smoothing: antialiased;
 }
@@ -185,12 +185,12 @@ body {
   pointer-events: none;
   background:
     linear-gradient(135deg, rgba(255, 250, 230, 0.6) 0%, transparent 50%),
-    radial-gradient(rgba(58, 46, 38, 0.02) 1px, transparent 1px);
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
   background-size: 100% 100%, 14px 14px;
 }
 .issue:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(58, 46, 38, 0.12);
+  box-shadow: 0 12px 28px rgba(30, 30, 30, 0.12);
   border-color: var(--accent-soft);
 }
 .issue > * { position: relative; z-index: 1; }
@@ -377,7 +377,7 @@ body {
 <!-- ============== Masthead ============== -->
 <header class="masthead">
   <div class="masthead-left">
-    <h1>iostiny<span class="slash">/</span><span class="latin-name">life</span></h1>
+    <h1>iostiny<span class="slash">/</span><span class="latin-name">zen</span></h1>
     <div class="latin">A reading journal &middot; 中文读书笔记 与 思想卡片</div>
   </div>
   <div class="masthead-right">
@@ -453,7 +453,7 @@ body {
 
 <!-- ============== Colophon ============== -->
 <footer class="colophon">
-  <a href="https://github.com/iostiny/life">github.com/iostiny/life</a>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
   <span class="sep">&middot;</span>
   内容 CC-BY 4.0
   <span class="sep">&middot;</span>
