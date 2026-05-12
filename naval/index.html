@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳瓦尔宝典 · 卡片版 · iostiny / life</title>
+<meta name="description" content="The Almanack of Naval Ravikant 中文卡片版：财富、幸福、哲学三章共 21 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #f6f1e7;
+  --paper-light: #fdfaf2;
+  --paper-card:  #fbf6ea;
+  --ink:         #2a2620;
+  --ink-deep:    #1a1612;
+  --ink-soft:    #6b5d4f;
+  --ink-faint:   #9a8f7f;
+  --rule:        #c9bca5;
+  --rule-soft:   #e0d6c0;
+  --accent:      #b8860b;
+  --accent-soft: #d4a849;
+  --accent-glow: rgba(212, 168, 73, 0.3);
+  --ember:       #a13e1f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image:
+    radial-gradient(rgba(58, 46, 38, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead 报头 ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol {
+  font-style: italic;
+  font-size: 1rem;
+}
+.masthead-right .by {
+  color: var(--ink);
+  margin-top: 4px;
+  font-weight: 500;
+}
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.masthead-right .date {
+  color: var(--ink-faint);
+  margin-top: 2px;
+  font-size: 0.85rem;
+}
+
+/* ========== Lede 前言 ========== */
+.lede {
+  max-width: 720px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  position: relative;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%);
+  padding: 0 2px;
+}
+
+/* ========== Section 章节 ========== */
+.section {
+  margin-bottom: 72px;
+  scroll-margin-top: 24px;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  /* 轻微的纸张光感 */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(58, 46, 38, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(58, 46, 38, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--ink-faint);
+}
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px;
+  top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p {
+  margin-bottom: 8px;
+}
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%);
+  padding: 0 2px;
+}
+.card-body em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* details 折叠延伸金句 */
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament 章节间分隔 ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px;
+  height: 1px;
+  background: var(--rule);
+}
+.ornament span {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* ========== Epilogue 结语 ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon 版权印刷信息 ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.colophon .sep {
+  margin: 0 8px;
+  color: var(--rule);
+}
+
+/* ========== Nav 章节锚定 ========== */
+.toc {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+
+/* 打印友好 */
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============== TOC 浮动锚 ============== -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#wealth"><span class="num">01</span>财富</a>
+  <a href="#happiness"><span class="num">02</span>幸福</a>
+  <a href="#philosophy"><span class="num">03</span>哲学</a>
+</nav>
+
+<!-- ============== Masthead ============== -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>纳瓦尔宝典</h1>
+    <div class="latin">The Almanack of Naval Ravikant &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 01 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / life</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- ============== Lede ============== -->
+<p class="lede">
+  财富不是被给予的，是被<strong>建造</strong>的；幸福不是被追到的，是被<strong>让出</strong>的。
+  这一册把纳瓦尔散落在十年访谈与推文里的判断，按主题压成卡片——
+  每张卡是一面镜子，也是一把<strong>判断的尺</strong>。
+</p>
+
+<!-- ============================================================ -->
+<!-- ============== 01 · 财富 · WEALTH ============== -->
+<!-- ============================================================ -->
+<section class="section" id="wealth">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">财富</span>
+    <span class="section-latin">— Wealth, on building rather than chasing</span>
+    <span class="section-desc">建造，而非追逐</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- W01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">SPECIFIC&nbsp;KNOWLEDGE</span>
+      </div>
+      <h3 class="card-quote">找到那件你做起来像玩、别人看着像工作的事。</h3>
+      <div class="card-body">
+        <p><strong>特定知识</strong>是无法被培训出来的能力。它来自你的好奇心与执念，不来自学校或职业路径。</p>
+        <p>检验方式只有一条：你做这件事时<em>感觉像在玩</em>，但别人看着像你在拼命工作。</p>
+        <p>它无法被外包——因为它正是你独有的认知组合。这也是它能成为杠杆原点的原因。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Specific knowledge is found much more by following your innate talents, your genuine curiosity, and your passion."</p>
+          <p>"If society can train you, it can train someone else to replace you."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">LEVERAGE</span>
+      </div>
+      <h3 class="card-quote">劳动力、资本、代码与媒体——选无许可的杠杆。</h3>
+      <div class="card-body">
+        <p>三种杠杆：<strong>劳动力</strong>（要管人）、<strong>资本</strong>（要会借钱）、<strong>代码与媒体</strong>（零边际成本，且能在你睡觉时继续工作）。</p>
+        <p>代码和媒体是新富的杠杆——它们<em>不需要谁的批准</em>就能复制。</p>
+        <p>用劳动力的人，会被用资本的人替代；最后会被用代码与媒体的人替代。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Code and media are permissionless leverage. They're the leverage behind the newly rich."</p>
+          <p>"An army of robots is freely available — it's just packed in data centers for heat and space efficiency. Use it."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">LONG&minus;TERM&nbsp;GAMES</span>
+      </div>
+      <h3 class="card-quote">复利的关键不是利率，是<em>不断回来</em>。</h3>
+      <div class="card-body">
+        <p>在长期游戏里，所有真正的回报都来自<strong>复利</strong>——声誉、技能、关系、财富，无一例外。</p>
+        <p>短期博弈让你赢一次；长期博弈让你赢十次，并把作弊者筛掉。</p>
+        <p>选你愿意玩三十年的游戏，和愿意一起玩三十年的人。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"All the returns in life, whether in wealth, relationships, or knowledge, come from compound interest."</p>
+          <p>"Play long-term games with long-term people."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">ACCOUNTABILITY</span>
+      </div>
+      <h3 class="card-quote">用真名做事，公开承担风险，市场会找上你。</h3>
+      <div class="card-body">
+        <p>公开的<strong>责任</strong>放大好运，也放大坏运，但最终是公平的。</p>
+        <p>隐藏在团队里是安全的，但天花板也最低；个人品牌是逃出安全屋的钥匙。</p>
+        <p>加薪的请求，应该是"<em>给我更多责任</em>"，而不是"给我更多任务"。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Take accountability to earn equity, get the leverage."</p>
+          <p>"Society will reward you with responsibility, equity, and leverage."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">JUDGMENT</span>
+      </div>
+      <h3 class="card-quote">AI 与资本过剩的时代，唯一稀缺的是<strong>判断力</strong>。</h3>
+      <div class="card-body">
+        <p>努力随处可见，判断力不是。一个 10x 工程师不是写 10 倍代码的人，<em>而是选对了要写哪段代码</em>的人。</p>
+        <p>训练判断力比训练技能慢得多，但收益曲线陡得多。</p>
+        <p>判断力的核心：在信息不完整、激励有偏差的环境里，仍能<strong>看到真实</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"You get paid based on the leverage on top of your judgment."</p>
+          <p>"Reading is faster than listening. Doing is faster than watching."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">RENT&nbsp;YOUR&nbsp;TIME</span>
+      </div>
+      <h3 class="card-quote">你出租时间的那一刻，就放弃了变富。</h3>
+      <div class="card-body">
+        <p>时薪游戏只能让你不饿，不能让你富有。<strong>富有</strong>=你睡觉时仍在赚钱——这要求你拥有资产，而不是劳动。</p>
+        <p>"被需要"和"被支付"是两件事，混淆它们的人终生在交换时间。</p>
+        <p>设一个原则：定一个<em>极高的时薪</em>，凡是低于它的事都拒绝或外包。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"You will never get rich renting out your time."</p>
+          <p>"Set a high personal hourly rate and stick to it. It should seem and feel absurdly high."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">PICK&nbsp;YOUR&nbsp;GAME</span>
+      </div>
+      <h3 class="card-quote">嫉妒驱使你玩别人的游戏；选自己的。</h3>
+      <div class="card-body">
+        <p><strong>财富 ≠ 地位 ≠ 金钱</strong>。地位是零和的，财富不是。</p>
+        <p>玩零和游戏会让你和对手长得越来越像——你不会喜欢最终的自己。</p>
+        <p>你要的胜利，是由你自己定义的胜利；不是别人给你的奖杯。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Status is a zero-sum game. Wealth creation is an extremely positive-sum game."</p>
+          <p>"You can't be normal and expect abnormal returns."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- W08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">PRODUCTIZE&nbsp;YOURSELF</span>
+      </div>
+      <h3 class="card-quote">把<strong>自己</strong>产品化。</h3>
+      <div class="card-body">
+        <p>把你独有的认知组合，打包成可被无限复制的产物：代码、文字、视频、产品。</p>
+        <p>每一份"你"的复制品，都是杠杆的一次免费扩张——你不再需要本人在场。</p>
+        <p>别再尝试做"你"以外的人；做<em>更深的</em>你，才是真正的护城河。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Escape competition through authenticity."</p>
+          <p>"Productize yourself: it combines specific knowledge with permissionless leverage."</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- ============== 02 · 幸福 · HAPPINESS ============== -->
+<!-- ============================================================ -->
+<section class="section" id="happiness">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">幸福</span>
+    <span class="section-latin">— Happiness, a skill you practice, not a state you reach</span>
+    <span class="section-desc">练习，而非寻找</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- H01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">HAPPINESS&nbsp;AS&nbsp;SKILL</span>
+      </div>
+      <h3 class="card-quote">幸福不是被给予的，是被<strong>练</strong>出来的。</h3>
+      <div class="card-body">
+        <p>幸福不取决于外部条件，而是一种<em>持续的内在练习</em>。</p>
+        <p>习惯、环境、关系、思维模式——这些都是可设计的。</p>
+        <p>一旦把幸福当作技能，你就不再需要向外索求许可。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Happiness is a choice. Happiness is a skill. Happiness is something to be developed."</p>
+          <p>"The world just reflects your own feelings back at you."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">DESIRE&nbsp;=&nbsp;SUFFERING</span>
+      </div>
+      <h3 class="card-quote">每一个欲望都是你在跟自己说"<em>我现在不快乐</em>"。</h3>
+      <div class="card-body">
+        <p>想要某物 = 承认现在缺它 = 现在不满。<strong>欲望即痛苦的契约</strong>。</p>
+        <p>一次只挑一个能改变人生的欲望去追，其余先放下；多线追逐会同时多线痛苦。</p>
+        <p>大多数欲望是被植入的，不是你的——区分这一点是自由的起点。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Desire is a contract you make with yourself to be unhappy until you get what you want."</p>
+          <p>"I only allow myself one big desire at any given time."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">PRESENT&nbsp;MOMENT</span>
+      </div>
+      <h3 class="card-quote">焦虑是活在未来，懊悔是活在过去。</h3>
+      <div class="card-body">
+        <p>心智只有在<strong>当下</strong>时是中性的；其余时间都在自动播放各种剧本。</p>
+        <p>大多数所谓"思考"其实是不受控的反复回放——你不是在思考，是被思考。</p>
+        <p>冥想 = 给"现在"留出位置；不是消除念头，是<em>不被念头追着跑</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"All of life's hard problems have already been solved by someone who came before you. Meditation, exercise, reading."</p>
+          <p>"The mind, more than anything else, needs to be trained."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">FREEDOM&nbsp;TO</span>
+      </div>
+      <h3 class="card-quote">真正的自由是 <em>freedom-to</em>，不是 <em>freedom-from</em>。</h3>
+      <div class="card-body">
+        <p>远离别人不算自由，那只是逃避。<strong>能选择做什么</strong>，才是自由。</p>
+        <p>自由的代价：你必须先有 self-knowledge，否则获得的只是更大空间里的更多焦虑。</p>
+        <p>外在自由是地基；内在自由才是楼层。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Freedom to is the freedom to do what I want. Freedom from is freedom from anger, suffering, people."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;COMPARISON</span>
+      </div>
+      <h3 class="card-quote">嫉妒是<strong>最难发现</strong>的恶。</h3>
+      <div class="card-body">
+        <p>嫉妒一个人，就要愿意把他的<em>全部生活整套</em>搬过来。99% 的时候你不愿意——所以那不叫想要，那叫错觉。</p>
+        <p>比较是把无限游戏拖进有限游戏的滑梯。</p>
+        <p>与昨天的自己比，其余忽略。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Envy is the enemy you cannot see."</p>
+          <p>"You will get rich by giving society what it wants but does not yet know how to get."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">DROP&nbsp;IDENTITY</span>
+      </div>
+      <h3 class="card-quote">你越认同一个身份，越无法看清真相。</h3>
+      <div class="card-body">
+        <p>身份是预设答案，它会自动屏蔽与之冲突的事实。</p>
+        <p>原则：<strong>强观点、弱信念</strong>——立场可换，事实优先。</p>
+        <p>标签越少，心智越自由。每一个"我是 X"的句子，都是一道未来的枷锁。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"To be honest, speak without identity."</p>
+          <p>"The struggle is not to be a perfect soul, the struggle is to stop suffering."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- H07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">BODY&nbsp;FIRST</span>
+      </div>
+      <h3 class="card-quote">身体是天花板，不是地板。</h3>
+      <div class="card-body">
+        <p>没有健康，所有其他维度都被<strong>锁顶</strong>——再多财富、爱、判断力都打了折。</p>
+        <p>睡眠、运动、阳光——三件小事压住整个人生。</p>
+        <p>把每天的健身和深睡，当作不可妥协的<em>工程约束</em>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"It's much easier to be at peace when your body is healthy and your mind is calm."</p>
+          <p>"Easy choices, hard life. Hard choices, easy life."</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- ============== 03 · 哲学 · PHILOSOPHY ============== -->
+<!-- ============================================================ -->
+<section class="section" id="philosophy">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">哲学</span>
+    <span class="section-latin">— Philosophy, the long view on time, truth, and self</span>
+    <span class="section-desc">看长，看清，看回自己</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- P01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">MORTALITY&nbsp;AS&nbsp;COMPASS</span>
+      </div>
+      <h3 class="card-quote">想象临终床上回看现在，决策立刻变简单。</h3>
+      <div class="card-body">
+        <p>长远视角让 99% 的短期烦恼<strong>自动作废</strong>。</p>
+        <p>死亡不是悲剧，是排序工具——它告诉你哪些事根本不配占用一天的寿命。</p>
+        <p>每天问一次：<em>今天值得为这件事用掉一天吗？</em></p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Death is the most important thing that's ever going to happen to you."</p>
+          <p>"Live by your values, and you'll be the most powerful version of yourself."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- P02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">HONESTY&nbsp;COMPOUNDS</span>
+      </div>
+      <h3 class="card-quote">说真话的代价是短期的，回报是终身的。</h3>
+      <div class="card-body">
+        <p>不一致的话需要被记住、被维护——它们是<strong>认知负债</strong>。</p>
+        <p>一致的人吸引同样一致的人，关系网整体提升。</p>
+        <p>真诚最大的礼物：你不再需要表演，记忆里只剩一份剧本。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Be impatient with actions, patient with results."</p>
+          <p>"If you can't be honest, you can't think clearly."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- P03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">ALWAYS&nbsp;A&nbsp;STUDENT</span>
+      </div>
+      <h3 class="card-quote">知识本身就是回报。</h3>
+      <div class="card-body">
+        <p>学习不是手段，是目的。是最<strong>持久</strong>的快乐之一，且不会随着拥有而衰减。</p>
+        <p>读你忍不住读的书；读不下去的书是浪费时间。</p>
+        <p>跟好奇心走，不跟职业规划走——前者复利，后者折旧。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Read what you love until you love to read."</p>
+          <p>"The genuine love for reading itself, when cultivated, is a superpower."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- P04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">INTERNAL&nbsp;SCORECARD</span>
+      </div>
+      <h3 class="card-quote">外界的掌声会消失，自己的判断不会。</h3>
+      <div class="card-body">
+        <p>选你<em>愿意输给的人</em>当法官——通常那个人就是你自己。</p>
+        <p>外评驱动会让你越来越像别人，离自己越来越远。</p>
+        <p>守住一个问题：<strong>我对自己今天的样子，满意吗？</strong></p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"The reality is, life is a single-player game."</p>
+          <p>"You're not going to get rich renting out your time, and you're not going to be happy chasing other people's approval."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- P05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">CLARITY&nbsp;OVER&nbsp;CLEVERNESS</span>
+      </div>
+      <h3 class="card-quote">真相通常是简单的。</h3>
+      <div class="card-body">
+        <p>复杂的解释往往是在<strong>防御</strong>不愿承认的事实。</p>
+        <p>第一性原理 = 把问题剥到不能再剥；剥不动了，那就是地基。</p>
+        <p>解释不清，说明你也没真懂——别用复杂术语糊弄自己。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"Clear thinker is a better compliment than smart."</p>
+          <p>"The most important skill for getting rich is becoming a perpetual learner."</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- P06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">CHOOSE&nbsp;LEISURE</span>
+      </div>
+      <h3 class="card-quote">时间是最稀缺的资源；用钱<strong>赎回</strong>它。</h3>
+      <div class="card-body">
+        <p>大多数支出是为了证明给别人看；用那笔钱赎回时间，更值。</p>
+        <p>闲暇不是浪费——它是<em>判断力的孵化期</em>。匆忙的人做不出长远决定。</p>
+        <p>你富不富，先看你的<strong>日历</strong>，再看你的账户。</p>
+      </div>
+      <details class="card-extras">
+        <summary>延伸金句</summary>
+        <div class="quotes">
+          <p>"If you can't decide, the answer is no."</p>
+          <p>"The most important thing in life is to be free to do things. There are two ways to be free: rich or low expectations."</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============== Epilogue ============== -->
+<aside class="epilogue">
+  <p class="signature">
+    "I'm not going to make any money in my life that I haven't already made.<br>
+    I'm just paying it forward."
+  </p>
+  <div class="author">— Naval Ravikant <small>via Eric Jorgenson, 2020</small></div>
+</aside>
+
+<!-- ============== Colophon ============== -->
+<footer class="colophon">
+  <a href="https://github.com/iostiny/life">github.com/iostiny/life</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  源码 MIT
+  <span class="sep">&middot;</span>
+  <a href="https://doc.iottiny.top">姊妹站 doc.iottiny.top</a>
+</footer>
+
+</body>
+</html>

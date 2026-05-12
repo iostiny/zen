@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遥远的救世主 · 卡片版 · iostiny / life</title>
+<meta name="description" content="豆豆《遥远的救世主》中文卡片版：文化属性、天道、觉者三章共 15 张判断卡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #f6f1e7;
+  --paper-light: #fdfaf2;
+  --paper-card:  #fbf6ea;
+  --ink:         #2a2620;
+  --ink-deep:    #1a1612;
+  --ink-soft:    #6b5d4f;
+  --ink-faint:   #9a8f7f;
+  --rule:        #c9bca5;
+  --rule-soft:   #e0d6c0;
+  --accent:      #b8860b;
+  --accent-soft: #d4a849;
+  --accent-glow: rgba(212, 168, 73, 0.3);
+  --ember:       #a13e1f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(58, 46, 38, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%);
+  padding: 0 2px;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(58, 46, 38, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(58, 46, 38, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -12px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 8px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%);
+  padding: 0 2px;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== TOC ========== */
+.toc {
+  position: fixed;
+  top: 50%; right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding: 16px 12px;
+  background: rgba(246, 241, 231, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+}
+.toc a {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--accent);
+  writing-mode: horizontal-tb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 18px; }
+  .card { padding: 20px 18px 16px; }
+  .card-quote { font-size: 1.15rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+  .toc { display: none; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .toc { display: none; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOC -->
+<nav class="toc" aria-label="章节导航">
+  <a href="#culture"><span class="num">01</span>文化属性</a>
+  <a href="#dao"><span class="num">02</span>天道</a>
+  <a href="#awakened"><span class="num">03</span>觉者</a>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>遥远的救世主</h1>
+    <div class="latin">A reading of 豆豆's novel &middot; 中文卡片版</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 02 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / life</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  <strong>神即道，道法自然，如来。</strong>
+  豆豆借丁元英之口，把一句话压成一把刀。
+  这一册把《遥远的救世主》里关于<strong>文化属性</strong>、<strong>天道</strong>、<strong>觉者</strong>的判断，
+  拆成十五张卡片——
+  它们不教你如何成功，它们教你看见自己的<em>滤镜</em>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 文化属性 · CULTURAL NATURE -->
+<!-- ============================================================ -->
+<section class="section" id="culture">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">文化属性</span>
+    <span class="section-latin">— The hidden code behind every life</span>
+    <span class="section-desc">透视一切的法门</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">CULTURAL&nbsp;CODE</span>
+      </div>
+      <h3 class="card-quote">透视社会现象的最高法门：文化属性。</h3>
+      <div class="card-body">
+        <p><strong>文化属性</strong>是一个民族、一个群体、一个个人的底层程序。它决定了你怎么看世界、怎么决策、能走多远。</p>
+        <p>不研究文化属性，你看到的所有"现象"都只是表象——背后真正运行的是这条<em>暗流</em>。</p>
+        <p>它不可视，但它决定一切。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"透视社会有三个层面：技术、制度和文化。小到一个人、大到一个国家、一个民族，任何一种命运，归根到底都是其文化属性的产物。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T02 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 02</span><span class="dot"></span>
+        <span class="card-tag">STRONG&nbsp;VS&nbsp;WEAK</span>
+      </div>
+      <h3 class="card-quote">强势文化造就强者，弱势文化造就弱者——铁律。</h3>
+      <div class="card-body">
+        <p>强势文化遵循<strong>事物本来的规律</strong>，按它该是的样子去做事。</p>
+        <p>弱势文化期待<em>破格获取</em>——靠关系、靠救主、靠运气、靠例外。</p>
+        <p>"破格获取"四个字一出口，弱势就定型了。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"强势文化就是遵循事物规律的文化，弱势文化就是依赖强者的道德期望破格获取的文化，是期望救主的文化。"</p>
+          <p>"强势文化在武学上被称为秘笈，而弱势文化由于易学、易懂、易用，太适合中国遍地都是的小老百姓的吃饭需求，所以处处可见，也就成了流行品种。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T03 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 03</span><span class="dot"></span>
+        <span class="card-tag">SAVIOR&nbsp;COMPLEX</span>
+      </div>
+      <h3 class="card-quote">期望救主的文化，必然孕育弱者。</h3>
+      <div class="card-body">
+        <p>"<em>等一个人来救我</em>"——这念头本身，就是把自己摆在被救的位置上。</p>
+        <p>给鱼不如给悟性：<strong>送钱是慈悲，送觉悟才是天道</strong>。</p>
+        <p>真正的扶贫，是让人不再期待被扶；否则今天扶他，明天他还在那。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"如果是我妈，我就用真理真相对她，跟她说没有救世主，没有谁能救她，能救她的只有她自己。"</p>
+          <p>"传统文化是皇恩浩荡的文化，它的实用是以皇天在上为先决条件。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T04 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 04</span><span class="dot"></span>
+        <span class="card-tag">NOT&nbsp;YOUR&nbsp;WILL</span>
+      </div>
+      <h3 class="card-quote">文化属性是基因，不以人的意志为转移。</h3>
+      <div class="card-body">
+        <p>你今天的处境，是你<em>过去文化属性</em>的结果；不是别人给的，也不是命给的。</p>
+        <p>抱怨外境是错位的——<strong>抱怨者本身，就是弱势文化的产物</strong>。</p>
+        <p>改变命运的唯一方式：先改文化属性，再等结果——而结果会自然到来。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"任何一种命运，归根到底都是那种文化属性的产物，不以人的意志为转移。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T05 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 05</span><span class="dot"></span>
+        <span class="card-tag">PERSONAL&nbsp;CODE</span>
+      </div>
+      <h3 class="card-quote">你的命，就是你的文化属性。</h3>
+      <div class="card-body">
+        <p>个人的文化属性 = 你长期默认采取的<strong>判断标准</strong>与<strong>行为模式</strong>。</p>
+        <p>它平时藏着，关键节点上跳出来替你做决定——而你以为那是"自己的选择"。</p>
+        <p>想知道一个人的命，不要看他说什么；看他在<em>没人盯着</em>时怎么做选择。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"什么是真理？客观规律就是真理。神是什么？神就是道。道是什么？道就是规律。规律是什么？规律如来，容不得你思议。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 02 · 天道 · THE WAY -->
+<!-- ============================================================ -->
+<section class="section" id="dao">
+  <header class="section-header">
+    <span class="section-num">№ 02</span>
+    <span class="section-name">天道</span>
+    <span class="section-latin">— The way that does not bend to your wishes</span>
+    <span class="section-desc">不以意志为转移</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T06 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 06</span><span class="dot"></span>
+        <span class="card-tag">DAO&nbsp;=&nbsp;NATURE</span>
+      </div>
+      <h3 class="card-quote">神即道，道法自然，如来。</h3>
+      <div class="card-body">
+        <p>"神"是规律，"道"是规律，"自然"是规律本来的样子，"<strong>如来</strong>"是事物如其本然地呈现。</p>
+        <p>不论你给它起什么名字，它都是<em>同一个东西</em>。</p>
+        <p>信"神"和讲"道"如何作用没差别——差别在你<strong>愿不愿按规律办事</strong>。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"神即道，道法自然，如来。"</p>
+          <p>"神是什么？神就是道，就是规律，规律如来，容不得你思议，按规律办事的人就是神。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T07 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 07</span><span class="dot"></span>
+        <span class="card-tag">SEE&nbsp;CAUSATION</span>
+      </div>
+      <h3 class="card-quote">见路非路，即见因果。</h3>
+      <div class="card-body">
+        <p>当你不再把<em>表面的路</em>当成路，你就开始看见<strong>因果</strong>本身。</p>
+        <p>大多数人走在路上，看不见路的来处与去处——看不见这一脚踏下去，下一脚会被推到哪。</p>
+        <p>看见因果之后，行动反而不难了——你知道按下哪个键，会响哪个铃。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"悟道休言天命，修行勿取真经；一悲一喜一枯荣，那个前生注定。"</p>
+          <p>"见路不走是种实事求是的态度，是更具体的、更接近事物本质的实事求是。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T08 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 08</span><span class="dot"></span>
+        <span class="card-tag">COLD&nbsp;LAW</span>
+      </div>
+      <h3 class="card-quote">天道<strong>不以人的意志</strong>为转移。</h3>
+      <div class="card-body">
+        <p>客观规律是冷的——它不会因为你"努力"、"虔诚"、"应得"就为你<em>破例</em>。</p>
+        <p>这听起来残酷，但其实最公平：所有按规律办事的人，被公平对待。</p>
+        <p>拒绝接受这一点的人，会反复跌进同一个坑——并怪坑太深。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"规律如来，容不得你思议。"</p>
+          <p>"事物的规律不会因为人的愿望而改变。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T09 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 09</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;ASKING</span>
+      </div>
+      <h3 class="card-quote">当有所求时，已落了下乘。</h3>
+      <div class="card-body">
+        <p>"<strong>求</strong>"本身就是一种姿态——把自己摆在低位，把对方摆在高位，把得失放中间，等着分配。</p>
+        <p>真正高明的人<em>不求</em>而顺势——不求反得，强求必失。</p>
+        <p>这不是消极，是把<strong>姿态放正</strong>了，能量自动流向你。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"开了天眼，看的就是规律，就是有无相生，就是无所求而无所不得。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T10 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 10</span><span class="dot"></span>
+        <span class="card-tag">GIVE&nbsp;NOT&nbsp;FISH</span>
+      </div>
+      <h3 class="card-quote">扶贫的悖论：送钱不如送觉悟。</h3>
+      <div class="card-body">
+        <p>古城村扶贫故事的核心：<em>直接给钱</em>是杀富济贫，两边都不可持续。</p>
+        <p>真正的"救"不是物质转移，是<strong>认知转移</strong>——让弱者获得强者的思维方式。</p>
+        <p>否则你今天救他，明天他还会变成那个弱者；你救的是结果，不是原因。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"杀富济贫不是救贫，是给贫困注射兴奋剂，让贫困暂时不觉得痛而已。"</p>
+          <p>"扶贫不是给钱，是给一种文化属性。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<div class="ornament"><span>&diams;</span></div>
+
+<!-- ============================================================ -->
+<!-- 03 · 觉者 · THE AWAKENED -->
+<!-- ============================================================ -->
+<section class="section" id="awakened">
+  <header class="section-header">
+    <span class="section-num">№ 03</span>
+    <span class="section-name">觉者</span>
+    <span class="section-latin">— Those who learn to see without their own filter</span>
+    <span class="section-desc">由心，不由人</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- T11 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 11</span><span class="dot"></span>
+        <span class="card-tag">AWAKEN&nbsp;FROM&nbsp;WITHIN</span>
+      </div>
+      <h3 class="card-quote">觉者由心，不由外。</h3>
+      <div class="card-body">
+        <p>觉悟<strong>从心里来</strong>——不靠老师、不靠书、不靠仪式、不靠"高人指点"。</p>
+        <p>别人能给你的最多是<em>缘</em>；觉悟还得自己生。</p>
+        <p>你想找一个能"度"你的人——这念头本身就是没觉。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"觉者由心生律，修者以律治心。"</p>
+          <p>"一个人要做点事必须要落到实处，急是急不来的。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T12 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 12</span><span class="dot"></span>
+        <span class="card-tag">SEEING&nbsp;AS&nbsp;IS</span>
+      </div>
+      <h3 class="card-quote">悟，知然之然。</h3>
+      <div class="card-body">
+        <p>悟性 = 看见事物<strong>本来的样子</strong>。不是聪明，不是机灵，不是"我懂了"。</p>
+        <p>是<em>去掉自己的滤镜</em>之后，让事物显其本然。</p>
+        <p>这是一辈子的功夫，做不完——但每去掉一层滤镜，世界就清晰一寸。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"悟道方知天命，修行勿取真经。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T13 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 13</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;MOVE</span>
+      </div>
+      <h3 class="card-quote">以无招应有招。</h3>
+      <div class="card-body">
+        <p>对手有"招数"，是因为他有<em>执念</em>——他想赢、他有套路、他想被看见。</p>
+        <p>你<strong>没有招</strong>，因为你不执——你只是回应每一个当下。</p>
+        <p>"无招"不是没本事，是<em>不被本事困住</em>——本事这时反而成了枷锁。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"利益是个变量，不是个固定值。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T14 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 14</span><span class="dot"></span>
+        <span class="card-tag">ORDINARY&nbsp;MIND</span>
+      </div>
+      <h3 class="card-quote">平常心：有条件就做，没条件就等。</h3>
+      <div class="card-body">
+        <p>"<em>随缘</em>"不是消极——是<strong>承认条件链</strong>，条件成熟事就发生，条件不到强求也没用。</p>
+        <p>不是认命，是不浪费精力对抗<em>不存在的对手</em>。</p>
+        <p>真正的平常心：两边都不慌——成不慌、败也不慌。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"随缘惜缘不攀缘。"</p>
+          <p>"我不是好人，也不是坏人。我只是个不愿意装的人。"</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- T15 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 15</span><span class="dot"></span>
+        <span class="card-tag">DEATH&nbsp;AS&nbsp;ANCHOR</span>
+      </div>
+      <h3 class="card-quote">芮小丹在死的那一刻，是<em>完整</em>的。</h3>
+      <div class="card-body">
+        <p>这本小说最沉重的一笔——但她活过每一个当下，<strong>已经把死亡预先放进去了</strong>。</p>
+        <p>每一个完整活过的当下，都是一个可以收尾的句号。</p>
+        <p>不为死亡焦虑，因为她从来没把"未来"<em>抵押</em>给现在。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"当生则生，当死则死，来去自如，丫头不简单啊。"</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    "如果一个民族的文化里，<br>
+    强势文化与弱势文化的对比是清晰的——<br>
+    那么这个民族的命运就是清晰的。"
+  </p>
+  <div class="author">— 丁元英 <small>via 豆豆《遥远的救世主》</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / life</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/life">github.com/iostiny/life</a>
+</footer>
+
+</body>
+</html>

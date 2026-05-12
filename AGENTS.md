@@ -1,0 +1,114 @@
+# AGENTS.md — iostiny / life
+
+给在本仓库工作的 AI 编码代理的项目指南。
+
+## 仓库定位
+
+`life` 是 iostiny 维护的**中文读书笔记 / 思想卡片**集合，是 [`iostiny/doc`](https://github.com/iostiny/doc) 的姊妹站。
+
+| | doc | life（本仓库） |
+|---|---|---|
+| 主题 | 技术文档 · 协议图谱 | 读书 · 思想 · 心智 |
+| 视觉 | cream + cherry red · JetBrains Mono | 纸张/报纸感 · 润米 + 赭石墨 + 黄栎 · Noto Serif SC |
+| 阅读姿态 | 精读 · 反复回查 · 写代码 | 慢读 · 反复回味 · 当下做选择 |
+
+部署：`life.iottiny.top`（GitHub Pages，main branch / root）。
+
+## 目录结构
+
+```
+life/
+├── index.html              ← 站点 hub：报头 + 本期目录 + 特辑卡 + 筹备中
+├── naval/                  ← 特辑 № 01 · 纳瓦尔宝典
+│   └── index.html
+├── tian-dao/               ← 特辑 № 02 · 遥远的救世主
+│   └── index.html
+├── README.md / AGENTS.md / CLAUDE.md / CNAME / .gitignore
+```
+
+每本书一个子目录（kebab-case slug），目录里至少有一个 `index.html` 作为该书的卡片合集。子目录可以单独下载离线看，跟根 hub 解耦。
+
+## 工程约束（跟 doc 一致）
+
+- **零依赖**：纯静态 HTML + 原生 CSS + 原生 JS。不引入 npm、构建链、SPA 框架、外部 JS 库。Google Fonts 是唯一外链。
+- **浏览器双击即看**：所有路径必须是相对路径。从 hub 到子页用 `./<slug>/`，从子页回 hub 用 `../`。
+- **每页 self-contained**：单文件可以很长（800+ 行接受），所有 CSS / JS / SVG 都内联。**不**跨页面共享 CSS 文件——hub 和每个子页各自内联同一套 CSS 的拷贝。这是 self-contained 的代价，可接受。
+- **每个子目录必须有 `index.html`**：作为该书的 landing 页。
+
+## 视觉规范（跟 doc 拉开）
+
+不复用 doc 的 cherry + cream 主调。本站走**报纸/纸张感**：
+
+```css
+--paper:       #f6f1e7;  /* 主背景 牛皮纸 */
+--paper-light: #fdfaf2;  /* 浅一层 */
+--paper-card:  #fbf6ea;  /* 卡片底色 */
+--ink:         #2a2620;  /* 正文墨色 */
+--ink-deep:    #1a1612;  /* 标题 */
+--ink-soft:    #6b5d4f;  /* 次要文字 */
+--ink-faint:   #9a8f7f;  /* 极弱 */
+--rule:        #c9bca5;  /* 实分隔线 */
+--rule-soft:   #e0d6c0;  /* 浅分隔线 */
+--accent:      #b8860b;  /* 黄栎重点 */
+--accent-soft: #d4a849;  /* 软重点 / 划线高亮 */
+--ember:       #a13e1f;  /* 印章红，谨慎用 */
+```
+
+字体：
+
+- 中文正文 / 标题：`Noto Serif SC`（衬线）
+- 西文 / 编号 / attribution / italic：`Cormorant Garamond`（衬线 italic）
+- **不**使用 JetBrains Mono（那是 doc 的标记）
+
+报纸感的关键视觉元素：
+
+- **Masthead 报头**：4px 双线 top（hub）/ 3px 双线 top（子页） + 1px 紧贴的 ::after 形成"双线压尾"
+- **Section header 章节刊头**：双层底线（2px 实 + ::after 1px 紧贴），编号 `№ 01` italic
+- **Lede 前言**：italic 居中 + 上下短横线装饰
+- **Card 剪报**：黄栎 highlighter 划在 `<strong>` 下方（`linear-gradient(180deg, transparent 62%, var(--accent-glow) 62%)`）
+- **背景微纹理**：极浅的 radial-gradient 点阵（rgba(58,46,38,0.05) 1px @ 22px）模拟纸张颗粒
+- **Ornament**：章节间用 `─── ◆ ───` 居中装饰线
+- **Colophon 版权印刷信息**：底部 mono italic + dotted 下划线链接
+
+### Hub vs 子页的视觉区别（要保留）
+
+- **Hub 的 masthead 更大**：标题 3.4rem（子页 2.8rem），双线更粗（4px vs 3px），"`/`" 用 accent 色突出
+- **Hub 的内容是"目录"**：issue cards 是大卡（420px+，单卡占据大量空间），不像子页的内联 cards（小、平铺）
+- **Hub 不带 TOC 浮动栏**：内容短，不需要
+- **子页带 TOC 浮动栏**：贴右边垂直排列，仅 ≥720px 显示
+
+## 内容设计原则
+
+- **金句优先**：每张卡以一句核心判断开篇（`.card-quote`），≤ 30 字。读者扫一眼就能记住。
+- **3-5 段细解**：紧跟金句给出 2-4 行展开，每段独立成立。
+- **黄栎下划线**：用 `<strong>` 包关键词，CSS 自动加 highlighter。一张卡 1-3 处即可，多了就麻木。
+- **可折叠的"原文延伸 / 延伸金句"**：用 `<details class="card-extras">` 装 1-3 条原书引言。默认折叠，让卡面保持干净。
+- **不要**强行套 SVG。本站不是图谱站，文字 + typography 就是视觉。
+- **不要**为了对称凑卡数。每个 section 5-8 张刚刚好；写不动就停。
+- **金句保留原书味道**：纳瓦尔的金句多英文 + 西式逻辑，可保留 italic 英文；豆豆的金句多古典中文 + 禅意，全中文呈现。
+
+## 添加新书的 checklist
+
+1. 选 slug：kebab-case，简短、名词性。如 `dao-de-jing` / `antifragile` / `poor-charlie`
+2. `mkdir <slug>/` → 在 hub 的 issue card CSS / 结构基础上写新的子页 `<slug>/index.html`
+   - 复用同一套 CSS（直接复制，self-contained 的代价）
+   - 章节数 3-4 章，每章 4-8 张卡，总卡数 12-25 之间为宜
+   - masthead 的 vol 改为 `特辑 № NN`（接续编号）
+   - by-line 链接 `../`
+   - TOC 锚改成该书章节锚（如 `#culture #dao #awakened`）
+3. **更新根 `index.html`**：
+   - 在 `.issues` grid 里加一张 `.issue` 卡，编号 `特辑 № NN`
+   - 选一句最具识别度的金句作 pull-quote
+   - 改 stats: `N 张卡 · 章名 / 章名 / 章名`
+   - 从 `.upcoming-books` 里删除该书（如果之前列在 upcoming）
+4. **更新 README.md** 的"当前内容"列表
+5. 测试 hover、CTA、mobile 响应式（≤600px）
+
+## 不要做的事
+
+- ❌ 引入 npm / 构建步骤 / SPA
+- ❌ 复用 doc 的 cherry red / JetBrains Mono（那是 doc 的视觉签名，本站要清楚区分）
+- ❌ 把读书笔记写成"技术文档"语气（这里是慢读、是品味、是判断；不是 API 文档）
+- ❌ 为了"看起来丰富"塞图标、emoji、装饰图 —— 报纸的力量在留白和 typography
+- ❌ 把多本书塞进一个 HTML 文件（每本书一个子目录是硬性结构）
+- ❌ 跨子目录共享 CSS / JS 文件
