@@ -23,10 +23,6 @@
 - [教父三部曲 · 卡片版](./the-godfather/) — Vito / Michael / Redemption 三部贯穿，15 张卡片
 - [星际穿越 · 卡片版](./interstellar/) — 仰望 / 相对 / 爱即维度，Nolan 的科学之诗，15 张卡片
 
-**论文 · Theses**
-
-- [牌照之外 · 单卡精读](./hunan-bank/) — 武玉环 EMBA 论文：没牌照的城商行，只能把"卖产品"换成"做配置"
-
 ## 工程范式
 
 零依赖 · self-contained HTML · 浏览器双击即看。每本书一个子目录，子目录里的 `index.html` 自包含全部 CSS / JS。详见 [`AGENTS.md`](./AGENTS.md)。
