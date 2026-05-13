@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牌照之外 · 武玉环 EMBA 论文 · iostiny / zen</title>
+<meta name="description" content="武玉环《湖南银行长沙分行财富管理业务发展策略优化研究》EMBA 论文一卡精读：没牌照的城商行，只能把卖产品换成做配置。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:       #ece8df;
+  --paper-light: #f4f1e8;
+  --paper-card:  #f2eee5;
+  --ink:         #1f1f1f;
+  --ink-deep:    #0e0e0e;
+  --ink-soft:    #5e5a52;
+  --ink-faint:   #8d8a82;
+  --rule:        #bab5a8;
+  --rule-soft:   #d4d0c4;
+  --accent:      #5e7548;
+  --accent-soft: #8aa370;
+  --accent-glow: rgba(138, 163, 112, 0.28);
+  --ember:       #a08856;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', Georgia, 'Songti SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 36px 28px 60px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-image: radial-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Masthead ========== */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 18px;
+  border-top: 3px double var(--ink-deep);
+  border-bottom: 1px solid var(--ink-deep);
+  position: relative;
+  margin-bottom: 36px;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.masthead-left h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--ink-deep);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.masthead-left .latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.masthead-right {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.masthead-right .vol { font-style: italic; font-size: 1rem; }
+.masthead-right .by { color: var(--ink); margin-top: 4px; font-weight: 500; }
+.masthead-right .by a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.masthead-right .by a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.masthead-right .date { color: var(--ink-faint); margin-top: 2px; font-size: 0.85rem; }
+
+/* ========== Lede ========== */
+.lede {
+  max-width: 760px;
+  margin: 32px auto 56px;
+  text-align: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  font-style: italic;
+  padding: 0 28px;
+}
+.lede::before, .lede::after {
+  content: '';
+  display: block;
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin: 14px auto;
+}
+.lede strong {
+  color: var(--ink-deep);
+  font-style: normal;
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+
+/* ========== Section ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 24px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 4px 10px;
+  border-bottom: 2px solid var(--ink-deep);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink-deep);
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.section-name {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  color: var(--ink-deep);
+  letter-spacing: 4px;
+}
+.section-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+.section-desc {
+  margin-left: auto;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-soft);
+  padding: 28px 30px 24px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 230, 0.5) 0%, transparent 50%),
+    radial-gradient(rgba(30, 30, 30, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 14px 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30, 30, 30, 0.10);
+  border-color: var(--accent-soft);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+.card-no {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.card-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-faint); }
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.42rem;
+  line-height: 1.55;
+  color: var(--ink-deep);
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 20px;
+  z-index: 1;
+}
+.card-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: var(--accent-soft);
+  position: absolute;
+  left: -6px; top: -14px;
+  line-height: 1;
+}
+.card-body {
+  font-size: 0.96rem;
+  color: var(--ink);
+  line-height: 1.88;
+  position: relative;
+  z-index: 1;
+}
+.card-body p { margin-bottom: 10px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong {
+  color: var(--ink-deep);
+  font-weight: 600;
+  text-emphasis: filled var(--accent);
+  text-emphasis-position: under;
+  -webkit-text-emphasis: filled var(--accent);
+  -webkit-text-emphasis-position: under;
+}
+.card-body em { font-style: italic; color: var(--ink-soft); }
+
+.card-extras {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--rule);
+  position: relative;
+  z-index: 1;
+}
+.card-extras summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+.card-extras summary:hover { color: var(--ember); }
+.card-extras summary::-webkit-details-marker { display: none; }
+.card-extras summary::before {
+  content: '+';
+  display: inline-block;
+  width: 14px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-extras[open] summary::before { content: '\2212'; }
+.card-extras .quotes {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.card-extras .quotes p {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card-extras .quotes p:last-child { margin-bottom: 0; }
+.card-extras .quotes p::before {
+  content: '— ';
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ========== Ornament ========== */
+.ornament {
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  width: 100px; height: 1px;
+  background: var(--rule);
+}
+.ornament span { font-size: 1.2rem; color: var(--accent); }
+
+/* ========== Epilogue ========== */
+.epilogue {
+  margin: 64px auto 0;
+  max-width: 620px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--ink-deep);
+  position: relative;
+}
+.epilogue .signature {
+  font-family: 'Noto Serif SC', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+.epilogue .author {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.epilogue .author small {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-left: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Colophon ========== */
+.colophon {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+}
+.colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color 0.15s, border-color 0.15s;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .sep { margin: 0 8px; color: var(--rule); }
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  body { padding: 24px 16px 40px; background-size: 18px 18px; }
+  .masthead { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0 14px; }
+  .masthead-right { text-align: left; }
+  .masthead-left h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .lede { margin: 24px auto 40px; padding: 0 8px; font-size: 1rem; }
+  .section { margin-bottom: 52px; }
+  .section-header { gap: 8px 12px; }
+  .section-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .section-desc { margin-left: 0; width: 100%; margin-top: 2px; font-size: 0.85rem; }
+  .card { padding: 22px 20px 18px; }
+  .card-quote { font-size: 1.22rem; }
+  .ornament { margin-bottom: 36px; }
+  .ornament::before, .ornament::after { width: 50px; }
+}
+@media (max-width: 480px) {
+  .masthead-left h1 { font-size: 1.85rem; }
+  .masthead-left .latin { font-size: 0.95rem; }
+  .lede { font-size: 0.96rem; line-height: 1.85; }
+  .lede::before, .lede::after { width: 40px; }
+}
+@media print {
+  body { background: white; padding: 0; max-width: 100%; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .card-extras { break-inside: avoid; }
+  .card-extras:not([open]) summary { display: none; }
+  .card-extras .quotes { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>牌照之外</h1>
+    <div class="latin">A reading of Wu Yuhuan's EMBA thesis &middot; 湖南大学 &middot; 2026 &middot; 单卡精读</div>
+  </div>
+  <div class="masthead-right">
+    <div class="vol">特辑 № 09 &middot; Vol. I</div>
+    <div class="by"><a href="../">&larr; iostiny / zen</a></div>
+    <div class="date">Anno MMXXVI</div>
+  </div>
+</header>
+
+<!-- Lede -->
+<p class="lede">
+  这是一篇<em>EMBA 学位论文</em>——主题枯燥，约束真实。<br>
+  作者是湖南银行长沙分行的内部人，研究的是<strong>没有理财子公司牌照的城商行</strong>，
+  在资管新规之后该怎么活。<br>
+  把整篇论文压成一张卡：<em>没牌照的城商行，只能把"卖产品"换成"做配置"</em>。
+</p>
+
+<!-- ============================================================ -->
+<!-- 01 · 窄路 · The Narrow Path -->
+<!-- ============================================================ -->
+<section class="section" id="narrow-path">
+  <header class="section-header">
+    <span class="section-num">№ 01</span>
+    <span class="section-name">窄路</span>
+    <span class="section-latin">— The Narrow Path</span>
+    <span class="section-desc">制度伤口逼出来的活法</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- H01 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-no">№ 01</span><span class="dot"></span>
+        <span class="card-tag">NO&nbsp;LICENSE</span><span class="dot"></span>
+        <span class="card-tag">CITY&nbsp;COMMERCIAL&nbsp;BANK</span>
+      </div>
+      <h3 class="card-quote">没牌照的城商行，只能把"卖产品"换成<strong>"做配置"</strong>。</h3>
+      <div class="card-body">
+        <p><strong>制度伤口在产品端</strong>。2022 年资管新规正式落地，理财业务全面净值化、刚兑被打破。大行可以设理财子公司自己造产品；湖南银行这样的城商行<em>没有这个资格</em>——只能代销。产品这一头被堵死，剩下的全部腾挪空间，<strong>都在客户端</strong>。</p>
+        <p><strong>论文给的核心转向</strong>：从"产品销售导向"换成"客户价值导向 / 资产配置导向"。客户不再按单一 AUM 切，而是按 <em>AUM + 风险偏好 + 生命周期 + 职业场景</em> 四个维度切——青年成长 / 家庭形成 / 财富增值 / 退休养老四档客群，配四套不同的组合方案。把"卖一个产品给一个客户"，换成"为这个客户的一段人生匹配一个组合"。</p>
+        <p><strong>数字化也不能照搬大行</strong>。投入差几个量级，再追也追不上。论文给的是"<em>低投入—高场景适配</em>"路径：复用总行系统、绑社交媒体公域流量、贴湖南本土场景——橘子洲、芒果 TV、湘商大会。差异化不在科技栈，在<strong>本地肌理</strong>。</p>
+        <p><strong>真正难改的是考核机制</strong>。"约 70% 商业银行仍将存贷款规模作为主要考核指标"——这是田蔚蔚（2025）的数据，也是这篇论文整个改造的<em>起点</em>。唯规模、唯中收的短期主义考核，是转型最大的敌人；不动这把尺，前面四件事都白做。论文给的解药：双轨制晋升、长期经营指标权重 ≥ 40%、师徒制传帮带——把"考核驱动销售"换成"考核驱动客户价值"。</p>
+        <p><strong>一句话：制度约束是问题的起点，但答案不在制度里</strong>——在客户经营、本土场景、以及那把<em>悄悄重新校准的考核尺</em>里。</p>
+      </div>
+      <details class="card-extras">
+        <summary>原文延伸</summary>
+        <div class="quotes">
+          <p>"财富管理坚持以客户需求为核心导向，突出定制化、全周期的综合服务特质，围绕家庭财富发展全周期，构建起财富积累、保值、增值、风险管控与代际传承的完整服务闭环。"（论文 1.2.1，财富管理理论）</p>
+          <p>"湖南银行作为区域性城商行，尚不具备设立理财子公司的资质和条件，只能通过代销体系参与理财市场竞争。这一制度约束使得湖南银行在产品端的自主性受到限制，必须在代销能力、客户服务深度和资产配置专业性等方面寻求差异化突破。"（论文 1.1.1，研究背景）</p>
+          <p>"约 70% 商业银行仍将存贷款规模作为主要考核指标，央行和金融监管总局 2024 年以来共开出 1584 张罚单，其中违规销售理财产品案例占比达 32%。"（田蔚蔚，2025；论文 1.2.2 文献综述引用）</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- Epilogue -->
+<aside class="epilogue">
+  <p class="signature">
+    制度堵住一扇门，<br>
+    人就得自己<em>磨出一条窄路</em>来。<br>
+    <br>
+    窄路上没有捷径，<br>
+    但走过的人会知道：<strong>这条路是自己的</strong>。
+  </p>
+  <div class="author">— 牌照之外 <small>via 武玉环 &middot; 湖南大学 EMBA 论文 &middot; 2026</small></div>
+</aside>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <a href="../">&larr; 返回 iostiny / zen</a>
+  <span class="sep">&middot;</span>
+  内容 CC-BY 4.0
+  <span class="sep">&middot;</span>
+  <a href="https://github.com/iostiny/zen">github.com/iostiny/zen</a>
+</footer>
+
+</body>
+</html>
